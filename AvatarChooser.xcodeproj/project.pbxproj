@@ -23,7 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1771E917243A7DFF00CF58D2 /* AvatarChooser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AvatarChooser; sourceTree = BUILT_PRODUCTS_DIR; };
+		1771E917243A7DFF00CF58D2 /* avatar-chooser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "avatar-chooser"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1771E91A243A7DFF00CF58D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +49,7 @@
 		1771E918243A7DFF00CF58D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1771E917243A7DFF00CF58D2 /* AvatarChooser */,
+				1771E917243A7DFF00CF58D2 /* avatar-chooser */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,9 +65,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1771E916243A7DFF00CF58D2 /* AvatarChooser */ = {
+		1771E916243A7DFF00CF58D2 /* avatar-chooser */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1771E91E243A7DFF00CF58D2 /* Build configuration list for PBXNativeTarget "AvatarChooser" */;
+			buildConfigurationList = 1771E91E243A7DFF00CF58D2 /* Build configuration list for PBXNativeTarget "avatar-chooser" */;
 			buildPhases = (
 				1771E913243A7DFF00CF58D2 /* Sources */,
 				1771E914243A7DFF00CF58D2 /* Frameworks */,
@@ -77,9 +77,9 @@
 			);
 			dependencies = (
 			);
-			name = AvatarChooser;
+			name = "avatar-chooser";
 			productName = AvatarChooser;
-			productReference = 1771E917243A7DFF00CF58D2 /* AvatarChooser */;
+			productReference = 1771E917243A7DFF00CF58D2 /* avatar-chooser */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -109,7 +109,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1771E916243A7DFF00CF58D2 /* AvatarChooser */,
+				1771E916243A7DFF00CF58D2 /* avatar-chooser */,
 			);
 		};
 /* End PBXProject section */
@@ -176,7 +176,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -228,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -263,7 +263,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1771E91E243A7DFF00CF58D2 /* Build configuration list for PBXNativeTarget "AvatarChooser" */ = {
+		1771E91E243A7DFF00CF58D2 /* Build configuration list for PBXNativeTarget "avatar-chooser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1771E91F243A7DFF00CF58D2 /* Debug */,

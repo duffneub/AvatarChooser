@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1771E91B243A7DFF00CF58D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E91A243A7DFF00CF58D2 /* main.m */; };
+		1771E923243A814100CF58D2 /* AvatarChooser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* AvatarChooser.mm */; };
+		1771E926243A828600CF58D2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
+		1771E929243A836800CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		1771E917243A7DFF00CF58D2 /* avatar-chooser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "avatar-chooser"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1771E91A243A7DFF00CF58D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1771E921243A814100CF58D2 /* AvatarChooser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarChooser.h; sourceTree = "<group>"; };
+		1771E922243A814100CF58D2 /* AvatarChooser.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AvatarChooser.mm; sourceTree = "<group>"; };
+		1771E924243A828600CF58D2 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		1771E925243A828600CF58D2 /* Game.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		1771E927243A836800CF58D2 /* Avatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avatar.h; sourceTree = "<group>"; };
+		1771E928243A836800CF58D2 /* Avatar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Avatar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				1771E91A243A7DFF00CF58D2 /* main.m */,
+				1771E921243A814100CF58D2 /* AvatarChooser.h */,
+				1771E922243A814100CF58D2 /* AvatarChooser.mm */,
+				1771E924243A828600CF58D2 /* Game.h */,
+				1771E925243A828600CF58D2 /* Game.m */,
+				1771E927243A836800CF58D2 /* Avatar.h */,
+				1771E928243A836800CF58D2 /* Avatar.m */,
 			);
 			path = AvatarChooser;
 			sourceTree = "<group>";
@@ -119,6 +134,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1771E926243A828600CF58D2 /* Game.m in Sources */,
+				1771E923243A814100CF58D2 /* AvatarChooser.mm in Sources */,
+				1771E929243A836800CF58D2 /* Avatar.m in Sources */,
 				1771E91B243A7DFF00CF58D2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

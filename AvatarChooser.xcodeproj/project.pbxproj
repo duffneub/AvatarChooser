@@ -19,6 +19,9 @@
 		1771E93E243AD83200CF58D2 /* PersistentImageRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */; };
 		1771E941243AE63B00CF58D2 /* SuggestAvatarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */; };
 		1771E947243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E946243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m */; };
+		1771E95C243B039F00CF58D2 /* GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E95B243B039F00CF58D2 /* GameTests.m */; };
+		1771E95D243B04BD00CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
+		1771E95E243B04C200CF58D2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,10 +61,20 @@
 		1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuggestAvatarService.m; sourceTree = "<group>"; };
 		1771E945243AF8F200CF58D2 /* CLIChooseAvatarUseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLIChooseAvatarUseCase.h; sourceTree = "<group>"; };
 		1771E946243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLIChooseAvatarUseCase.m; sourceTree = "<group>"; };
+		1771E953243B038400CF58D2 /* AvatarChooserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvatarChooserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1771E957243B038400CF58D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1771E95B243B039F00CF58D2 /* GameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1771E914243A7DFF00CF58D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1771E950243B038400CF58D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -75,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				1771E919243A7DFF00CF58D2 /* AvatarChooser */,
+				1771E954243B038400CF58D2 /* AvatarChooserTests */,
 				1771E918243A7DFF00CF58D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				1771E917243A7DFF00CF58D2 /* avatar-chooser */,
+				1771E953243B038400CF58D2 /* AvatarChooserTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +188,15 @@
 			path = "Game Details";
 			sourceTree = "<group>";
 		};
+		1771E954243B038400CF58D2 /* AvatarChooserTests */ = {
+			isa = PBXGroup;
+			children = (
+				1771E957243B038400CF58D2 /* Info.plist */,
+				1771E95B243B039F00CF58D2 /* GameTests.m */,
+			);
+			path = AvatarChooserTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,6 +217,23 @@
 			productReference = 1771E917243A7DFF00CF58D2 /* avatar-chooser */;
 			productType = "com.apple.product-type.tool";
 		};
+		1771E952243B038400CF58D2 /* AvatarChooserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1771E958243B038400CF58D2 /* Build configuration list for PBXNativeTarget "AvatarChooserTests" */;
+			buildPhases = (
+				1771E94F243B038400CF58D2 /* Sources */,
+				1771E950243B038400CF58D2 /* Frameworks */,
+				1771E951243B038400CF58D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AvatarChooserTests;
+			productName = AvatarChooserTests;
+			productReference = 1771E953243B038400CF58D2 /* AvatarChooserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -203,6 +244,9 @@
 				ORGANIZATIONNAME = "Duff Neubauer";
 				TargetAttributes = {
 					1771E916243A7DFF00CF58D2 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					1771E952243B038400CF58D2 = {
 						CreatedOnToolsVersion = 11.4;
 					};
 				};
@@ -221,9 +265,20 @@
 			projectRoot = "";
 			targets = (
 				1771E916243A7DFF00CF58D2 /* avatar-chooser */,
+				1771E952243B038400CF58D2 /* AvatarChooserTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1771E951243B038400CF58D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1771E913243A7DFF00CF58D2 /* Sources */ = {
@@ -242,6 +297,16 @@
 				1771E929243A836800CF58D2 /* Avatar.m in Sources */,
 				1771E93E243AD83200CF58D2 /* PersistentImageRepository.m in Sources */,
 				1771E91B243A7DFF00CF58D2 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1771E94F243B038400CF58D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1771E95E243B04C200CF58D2 /* Game.m in Sources */,
+				1771E95D243B04BD00CF58D2 /* Avatar.m in Sources */,
+				1771E95C243B039F00CF58D2 /* GameTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +438,40 @@
 			};
 			name = Release;
 		};
+		1771E959243B038400CF58D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AvatarChooserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.duffneubauer.AvatarChooserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1771E95A243B038400CF58D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = AvatarChooserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.duffneubauer.AvatarChooserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -390,6 +489,15 @@
 			buildConfigurations = (
 				1771E91F243A7DFF00CF58D2 /* Debug */,
 				1771E920243A7DFF00CF58D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1771E958243B038400CF58D2 /* Build configuration list for PBXNativeTarget "AvatarChooserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1771E959243B038400CF58D2 /* Debug */,
+				1771E95A243B038400CF58D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -59,17 +59,18 @@
 
 - (NSArray<Avatar *> *)suggestPreviousAvatars {
     NSInteger previousIndex;
-    if (self.lastSuggestionIndex < self.avatars.count) {
-        previousIndex = self.lastSuggestionIndex - self.numberOfSuggestions;
+    if (self.lastSuggestionIndex == 0 || self.lastSuggestionIndex == NSNotFound) {
+        previousIndex = NSNotFound;
     } else {
-        previousIndex = self.avatars.count - (self.avatars.count % self.numberOfSuggestions);
+        NSInteger numberOfAvatarsInPreviousSuggestion = (self.lastSuggestionIndex % self.numberOfSuggestions) ?: self.numberOfSuggestions;
+        previousIndex = self.lastSuggestionIndex - numberOfAvatarsInPreviousSuggestion;
     }
     return [self _suggestAvatarsFromIndex:previousIndex];
 }
 
 - (NSArray<Avatar *> *)_suggestAvatarsFromIndex:(NSInteger)index {
     NSArray<Avatar *> *suggestion;
-    if (index < 0) {
+    if (index == NSNotFound) {
         self.lastSuggestionIndex = NSNotFound;
         suggestion = @[];
     } else if (index >= self.avatars.count) {

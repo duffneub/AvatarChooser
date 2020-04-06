@@ -11,7 +11,7 @@
 #import "Avatar.h"
 
 @interface Game ()
-@property (strong, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *name;
 @property (strong, nonatomic) NSArray<Avatar *> *avatars;
 
 // For suggesting avatars

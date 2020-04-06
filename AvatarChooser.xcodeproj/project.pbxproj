@@ -13,6 +13,7 @@
 		1771E929243A836800CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
 		1771E92C243AB1F200CF58D2 /* AvatarChooserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */; };
 		1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
+		1771E932243ABAB500CF58D2 /* GamesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E931243ABAB500CF58D2 /* GamesListPresenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarChooserService.m; sourceTree = "<group>"; };
 		1771E92D243AB4E600CF58D2 /* RemoteGameRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteGameRepository.h; sourceTree = "<group>"; };
 		1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteGameRepository.m; sourceTree = "<group>"; };
+		1771E930243ABAB500CF58D2 /* GamesListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesListPresenter.h; sourceTree = "<group>"; };
+		1771E931243ABAB500CF58D2 /* GamesListPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesListPresenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				1771E91A243A7DFF00CF58D2 /* main.m */,
 				1771E921243A814100CF58D2 /* AvatarChooser.h */,
 				1771E922243A814100CF58D2 /* AvatarChooser.mm */,
+				1771E930243ABAB500CF58D2 /* GamesListPresenter.h */,
+				1771E931243ABAB500CF58D2 /* GamesListPresenter.m */,
 				1771E924243A828600CF58D2 /* Game.h */,
 				1771E925243A828600CF58D2 /* Game.m */,
 				1771E927243A836800CF58D2 /* Avatar.h */,
@@ -147,6 +152,7 @@
 				1771E926243A828600CF58D2 /* Game.m in Sources */,
 				1771E92C243AB1F200CF58D2 /* AvatarChooserService.m in Sources */,
 				1771E923243A814100CF58D2 /* AvatarChooser.mm in Sources */,
+				1771E932243ABAB500CF58D2 /* GamesListPresenter.m in Sources */,
 				1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */,
 				1771E929243A836800CF58D2 /* Avatar.m in Sources */,
 				1771E91B243A7DFF00CF58D2 /* main.m in Sources */,

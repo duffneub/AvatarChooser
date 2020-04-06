@@ -15,14 +15,17 @@ using namespace std;
 #import "Avatar.h"
 
 #import "AvatarChooserService.h"
+#import "GamesListPresenter.h"
 #import "RemoteGameRepository.h"
 
-@interface AvatarChooser ()
+@interface AvatarChooser () <GamesListView>
 @property (strong, nonatomic) NSURL *downloadsDirectory;
-@property (strong, nonatomic) NSArray<Game *> *games;
 @property (strong, nonatomic) Game *selectedGame;
 @property (strong, nonatomic) Avatar *selectedAvatar;
-@property (strong, nonatomic) AvatarChooserService *avatarChooserService;
+@property (strong, nonatomic) GamesListPresenter *presenter;
+
+// UI State
+@property (strong, nonatomic) NSArray<GameViewModel *> *games;
 @end
 
 @implementation AvatarChooser
@@ -32,7 +35,8 @@ using namespace std;
         self.downloadsDirectory = directory;
         
         id<GameRepository> gameRepo = [[RemoteGameRepository alloc] init];
-        self.avatarChooserService = [[AvatarChooserService alloc] initWithGameRepository:gameRepo];
+        AvatarChooserService *service = [[AvatarChooserService alloc] initWithGameRepository:gameRepo];
+        self.presenter = [[GamesListPresenter alloc] initWithAvatarChooserService:service];
     }
     
     return self;
@@ -51,13 +55,7 @@ using namespace std;
     }
     
     NSLog(@"Duff -- Fetch all games");
-    [self.avatarChooserService getAllGamesWithAvatarsWithCompletionHandler:^(NSArray<Game *> * _Nonnull games) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.games = games;
-            [self displayGames];
-            [self waitForUserToChooseGame];
-        });
-    }];
+    [self.presenter presentView:self];
 }
 
 - (BOOL)createDirectoryIfNeeded:(NSURL *)directory {
@@ -79,26 +77,13 @@ using namespace std;
     return success;
 }
 
-- (void)displayGames {
-    NSArray<NSURL *> *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:self.downloadsDirectory includingPropertiesForKeys:nil options:0 error:nil];
-    for (NSURL *file in contents) {
-        [[NSFileManager defaultManager] removeItemAtURL:file error:nil];
-    }
-
-    cout << "Games:\n";
-    
-    [self.games enumerateObjectsUsingBlock:^(Game * _Nonnull game, NSUInteger idx, BOOL * _Nonnull stop) {
-        printf("\t%ld. %s (%ld)\n", idx + 1, game.name.UTF8String, game.numberOfAvatars);
-    }];
-}
-
 - (void)waitForUserToChooseGame {
     int gamePlace;
     
     cout << "Please enter an integer between 1 and " << self.games.count << ":\n";
     cin >> gamePlace;
     
-    self.selectedGame = self.games[gamePlace - 1];
+    self.selectedGame = self.games[gamePlace - 1].base;
     [self.selectedGame resetAvatarSuggestions];
     cout << "Showing avatars for '" << self.selectedGame.name.UTF8String << "'...\n";
     
@@ -140,7 +125,7 @@ using namespace std;
     } else if (input == '<') {
         [self showPreviousAvatars];
     } else if (input == '0') {
-        [self displayGames];
+        [self displayGamesList];
         [self waitForUserToChooseGame];
     } else if (1 <= (input - '0') && (input - '0') <= avatars.count ) {
         int index = (input - '0') - 1;
@@ -170,6 +155,34 @@ using namespace std;
     cout << "Show Previous Avatars:\n";
     NSArray<Avatar *> *avatars = [self.selectedGame previousAvatarSuggestion];
     [self displayAvatars:avatars];
+}
+
+#pragma mark - GamesListView
+
+- (void)setGamesList:(NSArray<GameViewModel *> *)games {
+    self.games = games;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self displayGamesList];
+        [self waitForUserToChooseGame];
+    });
+}
+
+- (void)displayGamesList {
+    [self removeDownloadedAvatarImages];
+
+    cout << "Games with Avatars:\n";
+    
+    [self.games enumerateObjectsUsingBlock:^(GameViewModel * _Nonnull game, NSUInteger idx, BOOL * _Nonnull stop) {
+        printf("\t%ld. %s\n", idx + 1, game.gameDescription.UTF8String);
+    }];
+}
+
+// Where does this go?
+- (void)removeDownloadedAvatarImages {
+    NSArray<NSURL *> *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:self.downloadsDirectory includingPropertiesForKeys:nil options:0 error:nil];
+    for (NSURL *file in contents) {
+        [[NSFileManager defaultManager] removeItemAtURL:file error:nil];
+    }
 }
 
 @end

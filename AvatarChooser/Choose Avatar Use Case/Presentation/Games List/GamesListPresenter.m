@@ -38,14 +38,16 @@
 
 @interface GamesListPresenter ()
 @property (strong, nonatomic) AvatarChooserService *service;
+@property (weak, nonatomic) id<GamesListRouter> router;
 @property (weak, nonatomic) id<GamesListView> view;
 @end
 
 @implementation GamesListPresenter
 
-- (instancetype)initWithAvatarChooserService:(AvatarChooserService *)service {
+- (instancetype)initWithService:(AvatarChooserService *)service router:(id<GamesListRouter>)router {
     if (self = [super init]) {
         self.service = service;
+        self.router = router;
     }
     return self;
 }
@@ -60,6 +62,11 @@
         }
         [self.view setGamesList:viewModels];
     }];
+}
+
+- (void)userDidSelectGame:(GameViewModel *)viewModel {
+    Game *game = viewModel.base;
+    [self.router showAvatarsForGame:game];
 }
 
 @end

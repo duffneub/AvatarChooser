@@ -13,6 +13,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol GamesListRouter <NSObject>
+- (void)showAvatarsForGame:(Game *)game;
+@end
+
 @interface GameViewModel : NSObject
 @property (readonly, strong, nonatomic) Game *base; // temporarily expose this
 @property (readonly, copy, nonatomic) NSString *gameDescription;
@@ -20,13 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GamesListView <NSObject>
 - (void)setGamesList:(NSArray<GameViewModel *> *)games;
-- (void)displayGamesList;
 @end
 
 @interface GamesListPresenter : NSObject
-- (instancetype)initWithAvatarChooserService:(AvatarChooserService *)service;
+- (instancetype)initWithService:(AvatarChooserService *)service router:(id<GamesListRouter>)router;
 
 - (void)presentView:(id<GamesListView>)view;
+- (void)userDidSelectGame:(GameViewModel *)viewModel;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,12 +10,12 @@
 
 @interface Avatar ()
 @property (copy, nonatomic) NSString *name;
-@property (copy, nonatomic) NSString *imageLocation;
+@property (copy, nonatomic) NSURL *imageLocation;
 @end
 
 @implementation Avatar
 
-- (instancetype)initWithName:(NSString *)name imageLocation:(NSString *)location {
+- (instancetype)initWithName:(NSString *)name imageLocation:(NSURL *)location {
     if (self = [super init]) {
         self.name = name;
         self.imageLocation = location;
@@ -24,8 +24,4 @@
     return self;
 }
 
-- (NSString *)imageName {
-    NSString *extension = [NSURL fileURLWithPath:self.imageLocation].pathExtension;
-    return [[NSURL fileURLWithPath:self.name] URLByAppendingPathExtension:extension].lastPathComponent;
-}
 @end

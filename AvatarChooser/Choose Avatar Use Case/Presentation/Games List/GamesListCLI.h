@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class GamesListPresenter;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AvatarChooser : NSObject
-- (instancetype)initWithDownloadsDirectory:(NSURL *)directory;
+@interface GamesListCLI : NSObject
+- (instancetype)initWithPresenter:(GamesListPresenter *)presenter;
 - (void)run;
 @end
 

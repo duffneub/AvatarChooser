@@ -29,7 +29,7 @@
 - (instancetype)initWithName:(NSString *)name avatars:(NSArray<Avatar *> *)avatars {
     if (self = [super init]) {
         self.name = name;
-        self.avatars = avatars;
+        self.avatars = [avatars ac_shuffle];
         self.numberOfSuggestions = 5;
         self.lastSuggestionIndex = NSNotFound;
     }
@@ -57,7 +57,7 @@
     return [self _suggestAvatarsFromIndex:nextStartIndex];
 }
 
-- (NSArray<Avatar *> *)previousAvatarSuggestion {
+- (NSArray<Avatar *> *)suggestPreviousAvatars {
     NSInteger previousIndex;
     if (self.lastSuggestionIndex < self.avatars.count) {
         previousIndex = self.lastSuggestionIndex - self.numberOfSuggestions;

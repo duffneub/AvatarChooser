@@ -11,16 +11,6 @@
 #import "Avatar.h"
 #import "Game.h"
 
-@protocol JSONDecodable
-- (instancetype)initWithJSON:(id)json;
-@end
-
-@interface Game (JSONDecodable) <JSONDecodable>
-@end
-
-@interface Avatar (JSONDecodable) <JSONDecodable>
-@end
-
 @interface RemoteGameRepository ()
 @property (strong, nonatomic) NSURL *baseURL;
 @property (strong, nonatomic) NSURLSession *session;
@@ -32,7 +22,7 @@
 {
     if (self = [super init]) {
         self.baseURL = [NSURL URLWithString:@"https://clientupdate-v6.cursecdn.com/Avatars/"];
-        self.session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        self.session = [NSURLSession sharedSession];
     }
     
     return self;
@@ -46,7 +36,7 @@
         NSArray *gamesList = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSMutableArray<Game *> *games = [@[] mutableCopy];
         for (NSDictionary *gameJSON in gamesList) {
-            [games addObject:[[Game alloc] initWithJSON:gameJSON]];
+            [games addObject:[self makeGameWithJSON:gameJSON]];
         }
         
         completionHandler(games);
@@ -55,30 +45,19 @@
     [task resume];
 }
 
-@end
-
-#pragma mark - Game + JSONDecodable
-
-@implementation Game (JSONDecodable)
-
-- (instancetype)initWithJSON:(NSDictionary *)json {
-    NSMutableArray<Avatar *> *avatars = [@[] mutableCopy];
+- (Game *)makeGameWithJSON:(NSDictionary *)json {
     NSArray *avatarListJSON = json[@"avatars"];
+    NSMutableArray<Avatar *> *avatars = [NSMutableArray arrayWithCapacity:avatarListJSON.count];
     for (NSDictionary *avatarJSON in avatarListJSON) {
-        [avatars addObject:[[Avatar alloc] initWithJSON:avatarJSON]];
+        [avatars addObject:[self makeAvatarWithJSON:avatarJSON]];
     }
     
-    return [self initWithName:json[@"name"] avatars:avatars];
+    return [[Game alloc] initWithName:json[@"name"] avatars:avatars];
 }
 
-@end
-
-#pragma mark - Avatar + JSONDecodable
-
-@implementation Avatar (JSONDecodable)
-
-- (instancetype)initWithJSON:(NSDictionary *)json {
-    return [self initWithName:json[@"name"] imageLocation:json[@"url"]];
+- (Avatar *)makeAvatarWithJSON:(NSDictionary *)json {
+    NSURL *imageLocation = [self.baseURL URLByAppendingPathComponent:json[@"url"]];
+    return [[Avatar alloc] initWithName:json[@"name"] imageLocation:imageLocation];
 }
 
 @end

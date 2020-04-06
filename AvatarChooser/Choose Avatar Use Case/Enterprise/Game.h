@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)resetAvatarSuggestions;
 - (NSArray<Avatar *> *)suggestNewAvatars;
-- (NSArray<Avatar *> *)previousAvatarSuggestion;
+- (NSArray<Avatar *> *)suggestPreviousAvatars;
 @end
 
 NS_ASSUME_NONNULL_END

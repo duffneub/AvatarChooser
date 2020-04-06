@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		1771E91B243A7DFF00CF58D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E91A243A7DFF00CF58D2 /* main.m */; };
-		1771E923243A814100CF58D2 /* AvatarChooser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* AvatarChooser.mm */; };
+		1771E923243A814100CF58D2 /* GamesListCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* GamesListCLI.mm */; };
 		1771E926243A828600CF58D2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
 		1771E929243A836800CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
 		1771E92C243AB1F200CF58D2 /* AvatarChooserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */; };
 		1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
 		1771E932243ABAB500CF58D2 /* GamesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E931243ABAB500CF58D2 /* GamesListPresenter.m */; };
+		1771E935243AC77D00CF58D2 /* GameDetailsCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */; };
+		1771E938243AC7AF00CF58D2 /* GameDetailsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */; };
+		1771E93E243AD83200CF58D2 /* PersistentImageRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */; };
+		1771E941243AE63B00CF58D2 /* SuggestAvatarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */; };
+		1771E947243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E946243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,8 +36,8 @@
 /* Begin PBXFileReference section */
 		1771E917243A7DFF00CF58D2 /* avatar-chooser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "avatar-chooser"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1771E91A243A7DFF00CF58D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1771E921243A814100CF58D2 /* AvatarChooser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarChooser.h; sourceTree = "<group>"; };
-		1771E922243A814100CF58D2 /* AvatarChooser.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AvatarChooser.mm; sourceTree = "<group>"; };
+		1771E921243A814100CF58D2 /* GamesListCLI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesListCLI.h; sourceTree = "<group>"; };
+		1771E922243A814100CF58D2 /* GamesListCLI.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GamesListCLI.mm; sourceTree = "<group>"; };
 		1771E924243A828600CF58D2 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		1771E925243A828600CF58D2 /* Game.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		1771E927243A836800CF58D2 /* Avatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avatar.h; sourceTree = "<group>"; };
@@ -43,6 +48,16 @@
 		1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteGameRepository.m; sourceTree = "<group>"; };
 		1771E930243ABAB500CF58D2 /* GamesListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesListPresenter.h; sourceTree = "<group>"; };
 		1771E931243ABAB500CF58D2 /* GamesListPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamesListPresenter.m; sourceTree = "<group>"; };
+		1771E933243AC77D00CF58D2 /* GameDetailsCLI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameDetailsCLI.h; sourceTree = "<group>"; };
+		1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GameDetailsCLI.mm; sourceTree = "<group>"; };
+		1771E936243AC7AF00CF58D2 /* GameDetailsPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameDetailsPresenter.h; sourceTree = "<group>"; };
+		1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameDetailsPresenter.m; sourceTree = "<group>"; };
+		1771E93C243AD83200CF58D2 /* PersistentImageRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersistentImageRepository.h; sourceTree = "<group>"; };
+		1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersistentImageRepository.m; sourceTree = "<group>"; };
+		1771E93F243AE63B00CF58D2 /* SuggestAvatarService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuggestAvatarService.h; sourceTree = "<group>"; };
+		1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuggestAvatarService.m; sourceTree = "<group>"; };
+		1771E945243AF8F200CF58D2 /* CLIChooseAvatarUseCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLIChooseAvatarUseCase.h; sourceTree = "<group>"; };
+		1771E946243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLIChooseAvatarUseCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,20 +91,86 @@
 			isa = PBXGroup;
 			children = (
 				1771E91A243A7DFF00CF58D2 /* main.m */,
-				1771E921243A814100CF58D2 /* AvatarChooser.h */,
-				1771E922243A814100CF58D2 /* AvatarChooser.mm */,
-				1771E930243ABAB500CF58D2 /* GamesListPresenter.h */,
-				1771E931243ABAB500CF58D2 /* GamesListPresenter.m */,
+				1771E948243AFC9D00CF58D2 /* Choose Avatar Use Case */,
+			);
+			path = AvatarChooser;
+			sourceTree = "<group>";
+		};
+		1771E948243AFC9D00CF58D2 /* Choose Avatar Use Case */ = {
+			isa = PBXGroup;
+			children = (
+				1771E945243AF8F200CF58D2 /* CLIChooseAvatarUseCase.h */,
+				1771E946243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m */,
+				1771E94C243AFCF000CF58D2 /* Presentation */,
+				1771E949243AFCA800CF58D2 /* Data Layer */,
+				1771E94A243AFCB600CF58D2 /* Application */,
+				1771E94B243AFCC700CF58D2 /* Enterprise */,
+			);
+			path = "Choose Avatar Use Case";
+			sourceTree = "<group>";
+		};
+		1771E949243AFCA800CF58D2 /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				1771E92D243AB4E600CF58D2 /* RemoteGameRepository.h */,
+				1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */,
+				1771E93C243AD83200CF58D2 /* PersistentImageRepository.h */,
+				1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */,
+			);
+			path = "Data Layer";
+			sourceTree = "<group>";
+		};
+		1771E94A243AFCB600CF58D2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1771E92A243AB1F200CF58D2 /* AvatarChooserService.h */,
+				1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */,
+				1771E93F243AE63B00CF58D2 /* SuggestAvatarService.h */,
+				1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		1771E94B243AFCC700CF58D2 /* Enterprise */ = {
+			isa = PBXGroup;
+			children = (
 				1771E924243A828600CF58D2 /* Game.h */,
 				1771E925243A828600CF58D2 /* Game.m */,
 				1771E927243A836800CF58D2 /* Avatar.h */,
 				1771E928243A836800CF58D2 /* Avatar.m */,
-				1771E92A243AB1F200CF58D2 /* AvatarChooserService.h */,
-				1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */,
-				1771E92D243AB4E600CF58D2 /* RemoteGameRepository.h */,
-				1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */,
 			);
-			path = AvatarChooser;
+			path = Enterprise;
+			sourceTree = "<group>";
+		};
+		1771E94C243AFCF000CF58D2 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1771E94D243AFCF800CF58D2 /* Games List */,
+				1771E94E243AFD0600CF58D2 /* Game Details */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		1771E94D243AFCF800CF58D2 /* Games List */ = {
+			isa = PBXGroup;
+			children = (
+				1771E921243A814100CF58D2 /* GamesListCLI.h */,
+				1771E922243A814100CF58D2 /* GamesListCLI.mm */,
+				1771E930243ABAB500CF58D2 /* GamesListPresenter.h */,
+				1771E931243ABAB500CF58D2 /* GamesListPresenter.m */,
+			);
+			path = "Games List";
+			sourceTree = "<group>";
+		};
+		1771E94E243AFD0600CF58D2 /* Game Details */ = {
+			isa = PBXGroup;
+			children = (
+				1771E933243AC77D00CF58D2 /* GameDetailsCLI.h */,
+				1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */,
+				1771E936243AC7AF00CF58D2 /* GameDetailsPresenter.h */,
+				1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */,
+			);
+			path = "Game Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,10 +232,15 @@
 			files = (
 				1771E926243A828600CF58D2 /* Game.m in Sources */,
 				1771E92C243AB1F200CF58D2 /* AvatarChooserService.m in Sources */,
-				1771E923243A814100CF58D2 /* AvatarChooser.mm in Sources */,
+				1771E947243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m in Sources */,
+				1771E923243A814100CF58D2 /* GamesListCLI.mm in Sources */,
+				1771E935243AC77D00CF58D2 /* GameDetailsCLI.mm in Sources */,
+				1771E938243AC7AF00CF58D2 /* GameDetailsPresenter.m in Sources */,
 				1771E932243ABAB500CF58D2 /* GamesListPresenter.m in Sources */,
+				1771E941243AE63B00CF58D2 /* SuggestAvatarService.m in Sources */,
 				1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */,
 				1771E929243A836800CF58D2 /* Avatar.m in Sources */,
+				1771E93E243AD83200CF58D2 /* PersistentImageRepository.m in Sources */,
 				1771E91B243A7DFF00CF58D2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

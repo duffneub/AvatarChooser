@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class Avatar;
 @class Game;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol GameRepository
 - (void)getAllWithCompletionHandler:(void (^)(NSArray<Game *> *))completionHandler;
+@end
+
+@protocol AvatarRepository
+- (void)deleteAllImages;
+- (void)loadImageForAvatar:(Avatar *)avatar;
 @end
 
 @interface AvatarChooserService : NSObject

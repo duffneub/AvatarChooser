@@ -26,15 +26,9 @@
 
 @implementation Game
 
-- (instancetype)initWithJSON:(NSDictionary *)json {
+- (instancetype)initWithName:(NSString *)name avatars:(NSArray<Avatar *> *)avatars {
     if (self = [super init]) {
-        self.name = json[@"name"];
-        
-        NSMutableArray<Avatar *> *avatars = [@[] mutableCopy];
-        NSArray *avatarListJSON = json[@"avatars"];
-        for (NSDictionary *avatarJSON in avatarListJSON) {
-            [avatars addObject:[[Avatar alloc] initWithJSON:avatarJSON]];
-        }
+        self.name = name;
         self.avatars = avatars;
         self.numberOfSuggestions = 5;
         self.lastSuggestionIndex = NSNotFound;

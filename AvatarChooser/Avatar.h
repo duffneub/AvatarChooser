@@ -11,11 +11,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Avatar : NSObject
-@property (readonly, strong, nonatomic) NSString *name;
-@property (readonly, strong, nonatomic) NSString *path;
-@property (readonly, strong, nonatomic) NSString *imageName;
+@property (readonly, copy, nonatomic) NSString *name;
+@property (readonly, copy, nonatomic) NSString *imageLocation;
+@property (readonly, copy, nonatomic) NSString *imageName;
 
-- (instancetype)initWithJSON:(NSDictionary *)json;
+- (instancetype)initWithName:(NSString *)name imageLocation:(NSString *)location;
+
 @end
 
 NS_ASSUME_NONNULL_END

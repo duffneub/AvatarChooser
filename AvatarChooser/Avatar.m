@@ -9,23 +9,23 @@
 #import "Avatar.h"
 
 @interface Avatar ()
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *path;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *imageLocation;
 @end
 
 @implementation Avatar
 
-- (instancetype)initWithJSON:(NSDictionary *)json {
+- (instancetype)initWithName:(NSString *)name imageLocation:(NSString *)location {
     if (self = [super init]) {
-        self.name = json[@"name"];
-        self.path = json[@"url"];
+        self.name = name;
+        self.imageLocation = location;
     }
     
     return self;
 }
 
 - (NSString *)imageName {
-    NSString *extension = [NSURL fileURLWithPath:self.path].pathExtension;
+    NSString *extension = [NSURL fileURLWithPath:self.imageLocation].pathExtension;
     return [[NSURL fileURLWithPath:self.name] URLByAppendingPathExtension:extension].lastPathComponent;
 }
 @end

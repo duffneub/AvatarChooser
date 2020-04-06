@@ -11,6 +11,8 @@
 		1771E923243A814100CF58D2 /* AvatarChooser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* AvatarChooser.mm */; };
 		1771E926243A828600CF58D2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
 		1771E929243A836800CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
+		1771E92C243AB1F200CF58D2 /* AvatarChooserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */; };
+		1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,10 @@
 		1771E925243A828600CF58D2 /* Game.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		1771E927243A836800CF58D2 /* Avatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avatar.h; sourceTree = "<group>"; };
 		1771E928243A836800CF58D2 /* Avatar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Avatar.m; sourceTree = "<group>"; };
+		1771E92A243AB1F200CF58D2 /* AvatarChooserService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarChooserService.h; sourceTree = "<group>"; };
+		1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarChooserService.m; sourceTree = "<group>"; };
+		1771E92D243AB4E600CF58D2 /* RemoteGameRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteGameRepository.h; sourceTree = "<group>"; };
+		1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteGameRepository.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,10 @@
 				1771E925243A828600CF58D2 /* Game.m */,
 				1771E927243A836800CF58D2 /* Avatar.h */,
 				1771E928243A836800CF58D2 /* Avatar.m */,
+				1771E92A243AB1F200CF58D2 /* AvatarChooserService.h */,
+				1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */,
+				1771E92D243AB4E600CF58D2 /* RemoteGameRepository.h */,
+				1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */,
 			);
 			path = AvatarChooser;
 			sourceTree = "<group>";
@@ -135,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1771E926243A828600CF58D2 /* Game.m in Sources */,
+				1771E92C243AB1F200CF58D2 /* AvatarChooserService.m in Sources */,
 				1771E923243A814100CF58D2 /* AvatarChooser.mm in Sources */,
+				1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */,
 				1771E929243A836800CF58D2 /* Avatar.m in Sources */,
 				1771E91B243A7DFF00CF58D2 /* main.m in Sources */,
 			);

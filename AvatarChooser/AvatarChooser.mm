@@ -14,11 +14,15 @@ using namespace std;
 #import "Game.h"
 #import "Avatar.h"
 
+#import "AvatarChooserService.h"
+#import "RemoteGameRepository.h"
+
 @interface AvatarChooser ()
 @property (strong, nonatomic) NSURL *downloadsDirectory;
 @property (strong, nonatomic) NSArray<Game *> *games;
 @property (strong, nonatomic) Game *selectedGame;
 @property (strong, nonatomic) Avatar *selectedAvatar;
+@property (strong, nonatomic) AvatarChooserService *avatarChooserService;
 @end
 
 @implementation AvatarChooser
@@ -26,6 +30,9 @@ using namespace std;
 - (instancetype)initWithDownloadsDirectory:(NSURL *)directory {
     if (self = [super init]) {
         self.downloadsDirectory = directory;
+        
+        id<GameRepository> gameRepo = [[RemoteGameRepository alloc] init];
+        self.avatarChooserService = [[AvatarChooserService alloc] initWithGameRepository:gameRepo];
     }
     
     return self;
@@ -38,30 +45,19 @@ using namespace std;
     }
     
     /* FOR TESTING PURPOSES, REMOVE FOR PROD */
-//    NSArray<NSURL *> *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:self.downloadsDirectory includingPropertiesForKeys:nil options:0 error:nil];
-//    for (NSURL *file in contents) {
-//        [[NSFileManager defaultManager] removeItemAtURL:file error:nil];
-//    }
+    NSArray<NSURL *> *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:self.downloadsDirectory includingPropertiesForKeys:nil options:0 error:nil];
+    for (NSURL *file in contents) {
+        [[NSFileManager defaultManager] removeItemAtURL:file error:nil];
+    }
     
     NSLog(@"Duff -- Fetch all games");
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURL *url = [NSURL URLWithString:@"https://clientupdate-v6.cursecdn.com/Avatars/avatars.json"];
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url
-                                        completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSArray *gamesList = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSMutableArray<Game *> *games = [@[] mutableCopy];
-        for (NSDictionary *gameJSON in gamesList) {
-            [games addObject:[[Game alloc] initWithJSON:gameJSON]];
-        }
-        self.games = games;
-
+    [self.avatarChooserService getAllGamesWithAvatarsWithCompletionHandler:^(NSArray<Game *> * _Nonnull games) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            self.games = games;
             [self displayGames];
             [self waitForUserToChooseGame];
         });
     }];
-    
-    [task resume];
 }
 
 - (BOOL)createDirectoryIfNeeded:(NSURL *)directory {
@@ -120,7 +116,7 @@ using namespace std;
         printf("\t%ld. %s\n", idx + 1, avatar.name.UTF8String);
         
         NSURL *base = [NSURL URLWithString:@"https://clientupdate-v6.cursecdn.com/Avatars/"];
-        NSURL *imageLocation = [base URLByAppendingPathComponent:avatar.path];
+        NSURL *imageLocation = [base URLByAppendingPathComponent:avatar.imageLocation];
 
         NSURLSession *session = [NSURLSession sharedSession];
         NSURLSessionDownloadTask *task = [session downloadTaskWithURL:imageLocation

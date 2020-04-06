@@ -13,10 +13,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Game : NSObject
-@property (readonly, strong, nonatomic) NSString *name;
+@property (readonly, copy, nonatomic) NSString *name;
 @property (readonly, nonatomic) NSUInteger numberOfAvatars;
 
-- (instancetype)initWithJSON:(NSDictionary *)json;
+- (instancetype)initWithName:(NSString *)name avatars:(NSArray<Avatar *> *)avatars;
 
 - (void)resetAvatarSuggestions;
 - (NSArray<Avatar *> *)suggestNewAvatars;

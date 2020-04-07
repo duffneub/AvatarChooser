@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AvatarChooserService.h"
+#import "ChooseGameService.h"
 #import "CLIChooseAvatarUseCase.h"
 #import "RemoteGameRepository.h"
 #import "GameDetailsPresenter.h"
@@ -31,13 +31,15 @@ int main(int argc, const char * argv[]) {
             [[NSFileManager defaultManager] removeItemAtURL:file error:nil];
         }
         
-        RemoteGameRepository *gameRepo = [[RemoteGameRepository alloc] init];
+        NSURL *databaseURL = [NSURL URLWithString:@"https://clientupdate-v6.cursecdn.com/Avatars/"];
+        RemoteGameRepository *gameRepo = [[RemoteGameRepository alloc] initWithBaseURL:databaseURL
+                                                                         networkClient:[NSURLSession sharedSession]];
         PersistentImageRepository *imageRepo = [[PersistentImageRepository alloc] initWithDownloadLocation:directory];
-        AvatarChooserService *chooserService = [[AvatarChooserService alloc] initWithGameRepository:gameRepo];
-        SuggestAvatarService *suggestService = [[SuggestAvatarService alloc] initWithImageRepository:imageRepo];
+        ChooseGameService *chooseGameService = [[ChooseGameService alloc] initWithGameRepository:gameRepo];
+        SuggestAvatarService *suggestAvatarService = [[SuggestAvatarService alloc] initWithImageRepository:imageRepo];
         
-        CLIChooseAvatarUseCase *useCase = [[CLIChooseAvatarUseCase alloc] initWithAvatarChooseService:chooserService
-                                                                                 suggestAvatarService:suggestService
+        CLIChooseAvatarUseCase *useCase = [[CLIChooseAvatarUseCase alloc] initWithChooseGameService:chooseGameService
+                                                                                 suggestAvatarService:suggestAvatarService
                                                                                     completionHandler:^{
             exit(EXIT_SUCCESS);
         }];

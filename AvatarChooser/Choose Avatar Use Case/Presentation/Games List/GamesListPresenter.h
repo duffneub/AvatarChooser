@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class AvatarChooserService;
+@class ChooseGameService;
 @class Game;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -24,13 +24,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol GamesListView <NSObject>
 - (void)setGamesList:(NSArray<GameViewModel *> *)games;
+@optional
+- (void)reloadGamesList;
+
 @end
 
 @interface GamesListPresenter : NSObject
-- (instancetype)initWithService:(AvatarChooserService *)service router:(id<GamesListRouter>)router;
+- (instancetype)initWithService:(ChooseGameService *)service router:(id<GamesListRouter>)router;
 
 - (void)presentView:(id<GamesListView>)view;
-- (void)userDidSelectGame:(GameViewModel *)viewModel;
+- (void)userDidSelectGameAtIndex:(NSUInteger)index;
+
+- (NSUInteger)numberOfGames;
+- (NSString *)nameOfGameAtIndex:(NSUInteger)index;
+- (NSUInteger)numberOfAvatarsForGameAtIndex:(NSUInteger)index;
+
 @end
 
 NS_ASSUME_NONNULL_END

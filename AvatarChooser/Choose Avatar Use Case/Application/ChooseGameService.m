@@ -1,18 +1,18 @@
 //
-//  AvatarChooserService.m
+//  ChooseGameService.m
 //  avatar-chooser
 //
 //  Created by Duff Neubauer on 4/5/20.
 //  Copyright © 2020 Duff Neubauer. All rights reserved.
 //
 
-#import "AvatarChooserService.h"
+#import "ChooseGameService.h"
 
-@interface AvatarChooserService ()
+@interface ChooseGameService ()
 @property (strong, nonatomic) id<GameRepository> gameRepo;
 @end
 
-@implementation AvatarChooserService
+@implementation ChooseGameService
 
 - (instancetype)initWithGameRepository:(id<GameRepository>)gameRepo {
     if (self = [super init]) {

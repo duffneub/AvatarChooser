@@ -8,7 +8,7 @@
 
 #import "CLIChooseAvatarUseCase.h"
 
-#import "AvatarChooserService.h"
+#import "ChooseGameService.h"
 #import "GamesListCLI.h"
 #import "GameDetailsCLI.h"
 #import "GameDetailsPresenter.h"
@@ -16,7 +16,7 @@
 #import "SuggestAvatarService.h"
 
 @interface CLIChooseAvatarUseCase () <GamesListRouter, GameDetailsRouter>
-@property (strong, nonatomic) AvatarChooserService *avatarChooserService;
+@property (strong, nonatomic) ChooseGameService *chooseGameService;
 @property (strong, nonatomic) SuggestAvatarService *suggestAvatarService;
 @property (copy, nonatomic) void (^completionHandler)(void);
 @property (strong, nonatomic) GamesListCLI *gamesListCLI;
@@ -25,11 +25,11 @@
 
 @implementation CLIChooseAvatarUseCase
 
-- (instancetype)initWithAvatarChooseService:(AvatarChooserService *)avatarChooserService
+- (instancetype)initWithChooseGameService:(ChooseGameService *)chooseGameService
                        suggestAvatarService:(SuggestAvatarService *)suggestAvatarService
                           completionHandler:(void (^)(void))completionHandler {
     if (self = [super init]) {
-        self.avatarChooserService = avatarChooserService;
+        self.chooseGameService = chooseGameService;
         self.suggestAvatarService = suggestAvatarService;
         self.completionHandler = completionHandler;
     }
@@ -59,7 +59,7 @@
     self.detailsCLI = nil;
 
     if (!self.gamesListCLI) {
-        GamesListPresenter *presenter = [[GamesListPresenter alloc] initWithService:self.avatarChooserService router:self];
+        GamesListPresenter *presenter = [[GamesListPresenter alloc] initWithService:self.chooseGameService router:self];
         self.gamesListCLI = [[GamesListCLI alloc] initWithPresenter:presenter];
     }
     

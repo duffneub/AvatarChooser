@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class AvatarChooserService;
+@class ChooseGameService;
 @class SuggestAvatarService;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CLIChooseAvatarUseCase : NSObject
-- (instancetype)initWithAvatarChooseService:(AvatarChooserService *)avatarChooserService
+- (instancetype)initWithChooseGameService:(ChooseGameService *)avatarChooserService
                        suggestAvatarService:(SuggestAvatarService *)suggestAvatarService
                           completionHandler:(void (^)(void))completionHandler;
 - (void)start;

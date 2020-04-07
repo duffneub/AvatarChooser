@@ -24,4 +24,21 @@
     return self;
 }
 
+- (BOOL)isEqual:(id)other
+{
+    if (other == self) {
+        return YES;
+    }
+    
+    if (![other isKindOfClass:[Avatar class]]) {
+      return NO;
+    }
+
+    return [self isEqualToAvatar:(Avatar *)other];
+}
+
+- (BOOL)isEqualToAvatar:(Avatar *)avatar {
+    return [self.name isEqualToString:avatar.name] && [self.imageLocation isEqual:avatar.imageLocation];
+}
+
 @end

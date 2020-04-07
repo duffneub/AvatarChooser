@@ -14,7 +14,7 @@ using namespace std;
 #import "Game.h"
 #import "Avatar.h"
 
-#import "AvatarChooserService.h"
+#import "ChooseGameService.h"
 #import "GamesListPresenter.h"
 #import "RemoteGameRepository.h"
 
@@ -64,7 +64,7 @@ using namespace std;
     cin >> gamePlace;
     
     // Seems like validation logic should be in presenter?
-    [self.presenter userDidSelectGame:self.games[gamePlace - 1]];
+    [self.presenter userDidSelectGameAtIndex:gamePlace - 1];
 }
 
 @end

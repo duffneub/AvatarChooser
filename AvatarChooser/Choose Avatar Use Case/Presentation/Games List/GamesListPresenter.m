@@ -8,46 +8,27 @@
 
 #import "GamesListPresenter.h"
 
-#import "AvatarChooserService.h"
+#import "ChooseGameService.h"
 #import "Game.h"
 
-@interface GameViewModel ()
-@property (strong, nonatomic) Game *game;
-- (instancetype)initWithGame:(Game *)game;
-@end
-
-@implementation GameViewModel
-
-- (instancetype)initWithGame:(Game *)game {
-    if (self = [super init]) {
-        self.game = game;
-    }
-    
-    return self;
-}
-
-- (NSString *)gameDescription {
-    return [NSString stringWithFormat:@"%@ (%ld)", self.game.name, self.game.numberOfAvatars];
-}
-
-- (Game *)base {
-    return self.game;
-}
-
-@end
-
 @interface GamesListPresenter ()
-@property (strong, nonatomic) AvatarChooserService *service;
+@property (strong, nonatomic) ChooseGameService *service;
 @property (weak, nonatomic) id<GamesListRouter> router;
 @property (weak, nonatomic) id<GamesListView> view;
+
+// UI State
+@property (strong, nonatomic) NSArray<Game *> *games;
+
 @end
 
 @implementation GamesListPresenter
 
-- (instancetype)initWithService:(AvatarChooserService *)service router:(id<GamesListRouter>)router {
+- (instancetype)initWithService:(ChooseGameService *)service router:(id<GamesListRouter>)router {
     if (self = [super init]) {
         self.service = service;
         self.router = router;
+        self.view = nil;
+        self.games = @[];
     }
     return self;
 }
@@ -56,17 +37,26 @@
     self.view = view;
 
     [self.service getAllGamesWithAvatarsWithCompletionHandler:^(NSArray<Game *> *games) {
-        NSMutableArray<GameViewModel *> *viewModels = [@[] mutableCopy];
-        for (Game *game in games) {
-            [viewModels addObject:[[GameViewModel alloc] initWithGame:game]];
-        }
-        [self.view setGamesList:viewModels];
+        self.games = games;
+        [self.view reloadGamesList];
     }];
 }
 
-- (void)userDidSelectGame:(GameViewModel *)viewModel {
-    Game *game = viewModel.base;
+- (void)userDidSelectGameAtIndex:(NSUInteger)index {
+    Game *game = self.games[index];
     [self.router showAvatarsForGame:game];
+}
+
+- (NSUInteger)numberOfGames {
+    return self.games.count;
+}
+
+- (NSString *)nameOfGameAtIndex:(NSUInteger)index {
+    return self.games[index].name;
+}
+
+- (NSUInteger)numberOfAvatarsForGameAtIndex:(NSUInteger)index {
+    return self.games[index].numberOfAvatars;
 }
 
 @end

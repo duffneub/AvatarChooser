@@ -13,16 +13,16 @@
 
 @interface RemoteGameRepository ()
 @property (strong, nonatomic) NSURL *baseURL;
-@property (strong, nonatomic) NSURLSession *session;
+@property (strong, nonatomic) id<NetworkClient> networkClient;
 @end
 
 @implementation RemoteGameRepository
 
-- (instancetype)init
+- (instancetype)initWithBaseURL:(NSURL *)baseURL networkClient:(id<NetworkClient>)networkClient
 {
     if (self = [super init]) {
-        self.baseURL = [NSURL URLWithString:@"https://clientupdate-v6.cursecdn.com/Avatars/"];
-        self.session = [NSURLSession sharedSession];
+        self.baseURL = baseURL;
+        self.networkClient = networkClient;
     }
     
     return self;
@@ -30,8 +30,8 @@
 
 - (void)getAllWithCompletionHandler:(void (^)(NSArray<Game *> *))completionHandler {
     NSURL *url = [self.baseURL URLByAppendingPathComponent:@"avatars.json"];
-    NSURLSessionDataTask *task = [self.session dataTaskWithURL:url
-                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    id<NetworkTask> task = [self.networkClient dataTaskWithURL:url
+                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         // TODO: Error checking
         NSArray *gamesList = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSMutableArray<Game *> *games = [@[] mutableCopy];

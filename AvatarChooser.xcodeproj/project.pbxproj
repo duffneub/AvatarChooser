@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17389314243CCF4C00AA71CE /* PersistentImageRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */; };
+		17389315243CCF5300AA71CE /* SuggestAvatarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */; };
+		17389316243CCF7500AA71CE /* CLIChooseAvatarUseCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E946243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m */; };
+		17389317243CD16200AA71CE /* GamesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E931243ABAB500CF58D2 /* GamesListPresenter.m */; };
+		17389318243CD1AD00AA71CE /* GameDetailsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */; };
+		17389319243CD1B200AA71CE /* GameDetailsCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */; };
+		1738931A243CD1BE00AA71CE /* GamesListCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* GamesListCLI.mm */; };
 		1771E91B243A7DFF00CF58D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E91A243A7DFF00CF58D2 /* main.m */; };
 		1771E923243A814100CF58D2 /* GamesListCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* GamesListCLI.mm */; };
 		1771E926243A828600CF58D2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
 		1771E929243A836800CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
-		1771E92C243AB1F200CF58D2 /* AvatarChooserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */; };
+		1771E92C243AB1F200CF58D2 /* ChooseGameService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* ChooseGameService.m */; };
 		1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
 		1771E932243ABAB500CF58D2 /* GamesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E931243ABAB500CF58D2 /* GamesListPresenter.m */; };
 		1771E935243AC77D00CF58D2 /* GameDetailsCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */; };
@@ -22,6 +29,10 @@
 		1771E95C243B039F00CF58D2 /* GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E95B243B039F00CF58D2 /* GameTests.m */; };
 		1771E95D243B04BD00CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
 		1771E95E243B04C200CF58D2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
+		1771E960243B094A00CF58D2 /* ChooseAvatarUseCaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E95F243B094A00CF58D2 /* ChooseAvatarUseCaseTests.m */; };
+		1771E962243B0A2E00CF58D2 /* avatars.json in Resources */ = {isa = PBXBuildFile; fileRef = 1771E961243B0A2E00CF58D2 /* avatars.json */; };
+		1771E963243B0D5600CF58D2 /* ChooseGameService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* ChooseGameService.m */; };
+		1771E964243B0D5A00CF58D2 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,8 +56,8 @@
 		1771E925243A828600CF58D2 /* Game.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		1771E927243A836800CF58D2 /* Avatar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Avatar.h; sourceTree = "<group>"; };
 		1771E928243A836800CF58D2 /* Avatar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Avatar.m; sourceTree = "<group>"; };
-		1771E92A243AB1F200CF58D2 /* AvatarChooserService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarChooserService.h; sourceTree = "<group>"; };
-		1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarChooserService.m; sourceTree = "<group>"; };
+		1771E92A243AB1F200CF58D2 /* ChooseGameService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseGameService.h; sourceTree = "<group>"; };
+		1771E92B243AB1F200CF58D2 /* ChooseGameService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseGameService.m; sourceTree = "<group>"; };
 		1771E92D243AB4E600CF58D2 /* RemoteGameRepository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteGameRepository.h; sourceTree = "<group>"; };
 		1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteGameRepository.m; sourceTree = "<group>"; };
 		1771E930243ABAB500CF58D2 /* GamesListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesListPresenter.h; sourceTree = "<group>"; };
@@ -64,6 +75,8 @@
 		1771E953243B038400CF58D2 /* AvatarChooserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvatarChooserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1771E957243B038400CF58D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1771E95B243B039F00CF58D2 /* GameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameTests.m; sourceTree = "<group>"; };
+		1771E95F243B094A00CF58D2 /* ChooseAvatarUseCaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseAvatarUseCaseTests.m; sourceTree = "<group>"; };
+		1771E961243B0A2E00CF58D2 /* avatars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = avatars.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +151,8 @@
 		1771E94A243AFCB600CF58D2 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				1771E92A243AB1F200CF58D2 /* AvatarChooserService.h */,
-				1771E92B243AB1F200CF58D2 /* AvatarChooserService.m */,
+				1771E92A243AB1F200CF58D2 /* ChooseGameService.h */,
+				1771E92B243AB1F200CF58D2 /* ChooseGameService.m */,
 				1771E93F243AE63B00CF58D2 /* SuggestAvatarService.h */,
 				1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */,
 			);
@@ -192,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				1771E957243B038400CF58D2 /* Info.plist */,
+				1771E961243B0A2E00CF58D2 /* avatars.json */,
+				1771E95F243B094A00CF58D2 /* ChooseAvatarUseCaseTests.m */,
 				1771E95B243B039F00CF58D2 /* GameTests.m */,
 			);
 			path = AvatarChooserTests;
@@ -275,6 +290,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1771E962243B0A2E00CF58D2 /* avatars.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1771E926243A828600CF58D2 /* Game.m in Sources */,
-				1771E92C243AB1F200CF58D2 /* AvatarChooserService.m in Sources */,
+				1771E92C243AB1F200CF58D2 /* ChooseGameService.m in Sources */,
 				1771E947243AF8F200CF58D2 /* CLIChooseAvatarUseCase.m in Sources */,
 				1771E923243A814100CF58D2 /* GamesListCLI.mm in Sources */,
 				1771E935243AC77D00CF58D2 /* GameDetailsCLI.mm in Sources */,
@@ -304,9 +320,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17389315243CCF5300AA71CE /* SuggestAvatarService.m in Sources */,
+				17389318243CD1AD00AA71CE /* GameDetailsPresenter.m in Sources */,
+				1738931A243CD1BE00AA71CE /* GamesListCLI.mm in Sources */,
 				1771E95E243B04C200CF58D2 /* Game.m in Sources */,
+				17389319243CD1B200AA71CE /* GameDetailsCLI.mm in Sources */,
+				17389317243CD16200AA71CE /* GamesListPresenter.m in Sources */,
+				17389316243CCF7500AA71CE /* CLIChooseAvatarUseCase.m in Sources */,
+				1771E960243B094A00CF58D2 /* ChooseAvatarUseCaseTests.m in Sources */,
+				17389314243CCF4C00AA71CE /* PersistentImageRepository.m in Sources */,
 				1771E95D243B04BD00CF58D2 /* Avatar.m in Sources */,
+				1771E964243B0D5A00CF58D2 /* RemoteGameRepository.m in Sources */,
 				1771E95C243B039F00CF58D2 /* GameTests.m in Sources */,
+				1771E963243B0D5600CF58D2 /* ChooseGameService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

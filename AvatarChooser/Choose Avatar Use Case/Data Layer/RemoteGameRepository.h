@@ -8,12 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-#import "AvatarChooserService.h"
+#import "ChooseGameService.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RemoteGameRepository : NSObject <GameRepository>
+@protocol NetworkTask <NSObject>
+- (void)resume;
+@end
 
+@protocol NetworkClient
+- (id<NetworkTask>)dataTaskWithURL:(NSURL *)url
+                        completionHandler:(void (^)(NSData * _Nullable, NSURLResponse * _Nullable, NSError * _Nullable))completionHandler;
+@end
+
+@interface RemoteGameRepository : NSObject <GameRepository>
+- (instancetype)initWithBaseURL:(NSURL *)baseURL networkClient:(id<NetworkClient>)networkClient;
+@end
+
+@interface NSURLSessionTask (NetworkTask) <NetworkTask>
+@end
+
+@interface NSURLSession (NetworkClient) <NetworkClient>
 @end
 
 NS_ASSUME_NONNULL_END

@@ -90,6 +90,18 @@
     XCTFail("Not implemented");
 }
 
+- (void)testUserBrowsesAvatarsBeforeChoosingAnAvatar {
+    XCTFail("Not implemented");
+}
+
+- (void)testUserBrowsesAvatarsInDifferentGamesBeforeChoosingAnAvatar {
+    XCTFail("Not implemented");
+}
+
+- (void)testUserChoosesSameGameWhenGoingBackToGamesList {
+    XCTFail("Not implemented");
+}
+
 - (void)testErrorPaths {
     XCTFail("Not implemented");
 }

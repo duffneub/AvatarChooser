@@ -40,14 +40,28 @@ using namespace std;
             printf("\t%d. %s (%ld)\n", i+1, name.UTF8String, numberOfAvatars);
         }
         
-        int gamePlace;
-        
-        cout << "Please enter an integer between 1 and " << numberOfGames << ":\n";
-        cin >> gamePlace;
-        
-        // Seems like validation logic should be in presenter?
-        [self.presenter userDidSelectGameAtIndex:gamePlace - 1];
+        [self listenForUserToChooseGame];
     });
+}
+
+- (void)listenForUserToChooseGame {
+    NSUInteger numberOfGames = [self.presenter numberOfGames];
+    cout << "Please enter an integer between 1 and " << numberOfGames << ":\n";
+    
+    int game;
+    cin >> game;
+    
+    // Should validation logic be in presenter?
+    if (1 <= game && game <= numberOfGames) {
+        [self.presenter userDidSelectGameAtIndex:game - 1];
+    } else {
+        cin.clear();
+        cin.ignore(INT_MAX, '\n');
+
+        cout << "Invalid entry. Try again.\n";
+        [self listenForUserToChooseGame];
+        return;
+    }
 }
 
 @end

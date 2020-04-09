@@ -28,12 +28,18 @@ using namespace std;
         printf("\t%d. %s (%s)\n", i + 1, name.UTF8String, filename.UTF8String);
     }
     
+    [self listenForUserAction];
+}
+
+- (void)listenForUserAction {
+    NSUInteger numberOfAvatars = [self.presenter numberOfAvatars];
+
     // Display help?
-//    cout << "\n";
-//    cout << "To choose an avatar:     \tEnter a number between 1 and " << avatars.count << "\n";
-//    cout << "To see more avatars:     \tEnter '>'\n";
-//    cout << "To see previous avatars: \tEnter '<'\n";
-//    cout << "To change game:          \tEnter '0'\n";
+    cout << "\n";
+    cout << "To choose an avatar:     \tEnter a number between 1 and " << numberOfAvatars << "\n";
+    cout << "To see more avatars:     \tEnter '>'\n";
+    cout << "To see previous avatars: \tEnter '<'\n";
+    cout << "To change game:          \tEnter '0'\n";
         
     char input;
     cin >> input;
@@ -47,6 +53,13 @@ using namespace std;
         [self.presenter chooseDifferentGame];
     } else if (1 <= inputAsInt && inputAsInt <= numberOfAvatars ) {
         [self.presenter selectAvatarAtIndex:inputAsInt - 1];
+    } else {
+        cin.clear();
+        cin.ignore(INT_MAX, '\n');
+
+        cout << "Invalid entry. Try again.\n";
+        [self listenForUserAction];
+        return;
     }
 }
 

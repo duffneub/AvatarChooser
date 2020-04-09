@@ -1,5 +1,5 @@
 //
-//  AvatarChooser.h
+//  ChooseAvatarCLI.h
 //  avatar-chooser
 //
 //  Created by Duff Neubauer on 4/5/20.
@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "GamesListPresenter.h"
+@class ChooseAvatarSceneBuilder;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GamesListCLI : NSObject <GamesListView>
+@interface ChooseAvatarCLI : NSObject
+- (instancetype)initWithBuilder:(ChooseAvatarSceneBuilder *)builder;
 - (void)run;
 @end
 

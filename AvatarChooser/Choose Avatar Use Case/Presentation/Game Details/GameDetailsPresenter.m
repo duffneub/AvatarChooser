@@ -12,29 +12,9 @@
 #import "Game.h"
 #import "SuggestAvatarService.h"
 
-@interface AvatarViewModel ()
-@property (strong, nonatomic) Avatar *avatar;
-@end
-
-@implementation AvatarViewModel
-
-- (instancetype)initWithAvatar:(Avatar *)avatar {
-    if (self = [super init]) {
-        self.avatar = avatar;
-    }
-    
-    return self;
-}
-
-- (NSString *)avatarDescription {
-    return [NSString stringWithFormat:@"%@ (%@)", self.avatar.name, self.avatar.imageLocation.lastPathComponent];
-}
-
-
-@end
-
 @interface GameDetailsPresenter ()
 @property (strong, nonatomic) Game *game;
+@property (strong, nonatomic) NSArray<Avatar *> *avatars;
 @property (strong, nonatomic) SuggestAvatarService *service;
 @property (weak, nonatomic) id<GameDetailsRouter> router;
 @property (weak, nonatomic) id<GameDetailsView> view;
@@ -52,29 +32,19 @@
     return self;
 }
 
-- (void)updateViewWithSuggestedAvatars:(NSArray<Avatar *> *)avatars {
-    NSMutableArray<AvatarViewModel *> *viewModels = [@[] mutableCopy];
-    for (Avatar *avatar in avatars) {
-        [viewModels addObject:[[AvatarViewModel alloc] initWithAvatar:avatar]];
-    }
-    
-    [self.view setSuggestedAvatars:viewModels];
-}
-
 - (void)attachView:(id<GameDetailsView>)view {
     self.view = view;
-
-    [self.view setGameName:self.game.name];
-    [self updateViewWithSuggestedAvatars:[self.service suggestNewAvatars]];
-    
+    [self suggestNewAvatars];
 }
 
 - (void)suggestNewAvatars {
-    [self updateViewWithSuggestedAvatars:[self.service suggestNewAvatars]];
+    self.avatars = [self.service suggestNewAvatars];
+    [self.view reloadAvatarSuggestions];
 }
 
 - (void)suggestPreviousAvatars {
-    [self updateViewWithSuggestedAvatars:[self.service suggestPreviousAvatars]];
+    self.avatars = [self.service suggestPreviousAvatars];
+    [self.view reloadAvatarSuggestions];
 }
 
 - (void)chooseDifferentGame {
@@ -82,9 +52,25 @@
     [self.router showGamesList];
 }
 
-- (void)selectAvatar:(AvatarViewModel *)viewModel {
-    [self.service selectAvatar:viewModel.avatar];
+- (void)selectAvatarAtIndex:(NSUInteger)index {
+    [self.service selectAvatar:self.avatars[index]];
     [self.router didChooseAvatar];
+}
+
+- (NSString *)nameOfGame {
+    return self.game.name;
+}
+
+- (NSUInteger)numberOfAvatars {
+    return self.avatars.count;
+}
+
+- (NSString *)nameOfAvatarAtIndex:(NSUInteger)index {
+    return self.avatars[index].name;
+}
+
+- (NSURL *)locationOfAvatarAtIndex:(NSUInteger)index {
+    return self.avatars[index].imageLocation;
 }
 
 @end

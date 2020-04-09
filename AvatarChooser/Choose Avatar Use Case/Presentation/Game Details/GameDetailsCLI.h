@@ -8,12 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@class GameDetailsPresenter;
+#import "GameDetailsPresenter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GameDetailsCLI : NSObject
-- (instancetype)initWithPresenter:(GameDetailsPresenter *)presenter;
+@interface GameDetailsCLI : NSObject <GameDetailsView>
 - (void)run;
 @end
 

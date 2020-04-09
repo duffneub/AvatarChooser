@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AvatarCollectionViewItem">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <collectionViewItem id="Cei-OB-jPu" customClass="AvatarCollectionViewItem">
+            <connections>
+                <outlet property="imageView" destination="TMO-kc-gJ0" id="dgE-za-sK0"/>
+                <outlet property="textField" destination="Bae-hT-aTN" id="eS5-bI-Iez"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="GKa-sz-8wE"/>
+            </connections>
+        </collectionViewItem>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TMO-kc-gJ0">
+                    <rect key="frame" x="20" y="40" width="440" height="212"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="grq-5A-T5f"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bae-hT-aTN">
+                    <rect key="frame" x="18" y="20" width="444" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="xgI-uw-91G"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="3xD-hO-CXt">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="TMO-kc-gJ0" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" symbolic="YES" id="H7V-lw-inO"/>
+                <constraint firstAttribute="trailing" secondItem="TMO-kc-gJ0" secondAttribute="trailing" constant="20" symbolic="YES" id="SFz-C0-cRa"/>
+                <constraint firstAttribute="trailing" secondItem="Bae-hT-aTN" secondAttribute="trailing" constant="20" symbolic="YES" id="VDY-sH-gC0"/>
+                <constraint firstAttribute="bottom" secondItem="Bae-hT-aTN" secondAttribute="bottom" constant="20" symbolic="YES" id="VIU-NP-YrT"/>
+                <constraint firstItem="TMO-kc-gJ0" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="X9q-qb-z0Z"/>
+                <constraint firstItem="Bae-hT-aTN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="s7a-cS-3VG"/>
+                <constraint firstItem="Bae-hT-aTN" firstAttribute="top" secondItem="TMO-kc-gJ0" secondAttribute="bottom" id="tMv-Vv-w3X"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </customView>
+    </objects>
+</document>

@@ -30,7 +30,7 @@
 
 - (void)getAllWithCompletionHandler:(void (^)(NSArray<Game *> *))completionHandler {
     NSURL *url = [self.baseURL URLByAppendingPathComponent:@"avatars.json"];
-    id<NetworkTask> task = [self.networkClient dataTaskWithURL:url
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url
                                              completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         // TODO: Error checking
         NSArray *gamesList = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];

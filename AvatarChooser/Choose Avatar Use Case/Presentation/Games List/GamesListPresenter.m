@@ -33,11 +33,13 @@
     return self;
 }
 
-- (void)presentView:(id<GamesListView>)view {
+- (void)attachView:(id<GamesListView>)view {
     self.view = view;
 
     [self.service getAllGamesWithAvatarsWithCompletionHandler:^(NSArray<Game *> *games) {
-        self.games = games;
+        self.games = [games sortedArrayUsingComparator:^NSComparisonResult(Game *lhs, Game *rhs) {
+            return [lhs.name compare:rhs.name];
+        }];
         [self.view reloadGamesList];
     }];
 }

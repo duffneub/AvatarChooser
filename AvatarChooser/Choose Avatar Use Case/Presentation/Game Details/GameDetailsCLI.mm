@@ -11,51 +11,30 @@
 #include <iostream>
 using namespace std;
 
-#import "GameDetailsPresenter.h"
-
-@interface GameDetailsCLI () <GameDetailsView>
-@property (strong, nonatomic) GameDetailsPresenter *presenter;
-@property (strong, nonatomic) NSString *gameName;
-@property (strong, nonatomic) NSArray<AvatarViewModel *> *suggestedAvatars;
-@end
-
 @implementation GameDetailsCLI
-
-- (instancetype)initWithPresenter:(GameDetailsPresenter *)presenter {
-    if (self = [super init]) {
-        self.presenter = presenter;
-    }
-    
-    return self;
-}
+@synthesize presenter;
 
 - (void)run {
     [self.presenter attachView:self];
 }
 
-- (void)setSuggestedAvatars:(NSArray<AvatarViewModel *> *)avatars {
-    _suggestedAvatars = avatars;
-    [self refreshUI];
-}
-
-- (void)refreshUI {
-    cout << "Suggested Avatars for '" << self.gameName.UTF8String << "':\n";
+- (void)reloadAvatarSuggestions {
+    cout << "Suggested Avatars for '" << [self.presenter nameOfGame].UTF8String << "':\n";
     
-    [self.suggestedAvatars enumerateObjectsUsingBlock:^(AvatarViewModel * _Nonnull avatar, NSUInteger idx, BOOL * _Nonnull stop) {
-        printf("\t%ld. %s\n", idx + 1, avatar.avatarDescription.UTF8String);
-    }];
+    NSUInteger numberOfAvatars = [self.presenter numberOfAvatars];
+    for (int i = 0; i < numberOfAvatars; i++) {
+        NSString *name = [self.presenter nameOfAvatarAtIndex:i];
+        NSString *filename = [[self.presenter locationOfAvatarAtIndex:i] lastPathComponent];
+        printf("\t%d. %s (%s)\n", i + 1, name.UTF8String, filename.UTF8String);
+    }
     
-    [self listenForUserInput];
-}
-
-- (void)listenForUserInput {
     // Display help?
 //    cout << "\n";
 //    cout << "To choose an avatar:     \tEnter a number between 1 and " << avatars.count << "\n";
 //    cout << "To see more avatars:     \tEnter '>'\n";
 //    cout << "To see previous avatars: \tEnter '<'\n";
 //    cout << "To change game:          \tEnter '0'\n";
-    
+        
     char input;
     cin >> input;
     int inputAsInt = input - '0';
@@ -66,8 +45,8 @@ using namespace std;
         [self.presenter suggestPreviousAvatars];
     } else if (input == '0') {
         [self.presenter chooseDifferentGame];
-    } else if (1 <= inputAsInt && inputAsInt <= self.suggestedAvatars.count ) {
-        [self.presenter selectAvatar:self.suggestedAvatars[inputAsInt - 1]];
+    } else if (1 <= inputAsInt && inputAsInt <= numberOfAvatars ) {
+        [self.presenter selectAvatarAtIndex:inputAsInt - 1];
     }
 }
 

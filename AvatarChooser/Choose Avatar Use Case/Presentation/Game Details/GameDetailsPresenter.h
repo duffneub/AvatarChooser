@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class Game;
+@class GameDetailsPresenter;
 @class SuggestAvatarService;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -18,13 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)didChooseAvatar;
 @end
 
-@interface AvatarViewModel : NSObject
-@property (readonly, copy, nonatomic) NSString *avatarDescription;
-@end
-
 @protocol GameDetailsView <NSObject>
-- (void)setGameName:(NSString *)name;
-- (void)setSuggestedAvatars:(NSArray<AvatarViewModel *> *)avatars;
+@property (strong) GameDetailsPresenter *presenter;
+- (void)reloadAvatarSuggestions;
+
 @end
 
 @interface GameDetailsPresenter : NSObject
@@ -34,7 +32,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)suggestNewAvatars;
 - (void)suggestPreviousAvatars;
 - (void)chooseDifferentGame;
-- (void)selectAvatar:(AvatarViewModel *)viewModel;
+- (void)selectAvatarAtIndex:(NSUInteger)index;
+
+- (NSString *)nameOfGame;
+- (NSUInteger)numberOfAvatars;
+- (NSString *)nameOfAvatarAtIndex:(NSUInteger)index;
+- (NSURL *)locationOfAvatarAtIndex:(NSUInteger)index;
 @end
 
 NS_ASSUME_NONNULL_END

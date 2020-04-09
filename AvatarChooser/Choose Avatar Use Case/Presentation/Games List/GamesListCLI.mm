@@ -15,56 +15,39 @@ using namespace std;
 #import "Avatar.h"
 
 #import "ChooseGameService.h"
-#import "GamesListPresenter.h"
 #import "RemoteGameRepository.h"
 
 @interface GamesListCLI () <GamesListView>
-@property (strong, nonatomic) GamesListPresenter *presenter;
-
-// UI State
-@property (strong, nonatomic) NSArray<GameViewModel *> *games;
 @end
 
 @implementation GamesListCLI
-
-- (instancetype)initWithPresenter:(GamesListPresenter *)presenter {
-    if (self = [super init]) {
-        self.presenter = presenter;
-    }
-    
-    return self;
-}
+@synthesize presenter;
 
 - (void)run {
-    [self.presenter presentView:self];
+    [self.presenter attachView:self];
 }
 
 #pragma mark - GamesListView
 
-- (void)setGamesList:(NSArray<GameViewModel *> *)games {
-    self.games = games;
+- (void)reloadGamesList {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self _displayGamesList];
-        [self _waitForUserToChooseGame];
+        cout << "Games with Avatars:\n";
+        
+        NSUInteger numberOfGames = [self.presenter numberOfGames];
+        for (int i = 0; i < numberOfGames; i++) {
+            NSString *name = [self.presenter nameOfGameAtIndex:i];
+            NSUInteger numberOfAvatars = [self.presenter numberOfAvatarsForGameAtIndex:i];
+            printf("\t%d. %s (%ld)\n", i+1, name.UTF8String, numberOfAvatars);
+        }
+        
+        int gamePlace;
+        
+        cout << "Please enter an integer between 1 and " << numberOfGames << ":\n";
+        cin >> gamePlace;
+        
+        // Seems like validation logic should be in presenter?
+        [self.presenter userDidSelectGameAtIndex:gamePlace - 1];
     });
-}
-
-- (void)_displayGamesList {
-    cout << "Games with Avatars:\n";
-    
-    [self.games enumerateObjectsUsingBlock:^(GameViewModel * _Nonnull game, NSUInteger idx, BOOL * _Nonnull stop) {
-        printf("\t%ld. %s\n", idx + 1, game.gameDescription.UTF8String);
-    }];
-}
-
-- (void)_waitForUserToChooseGame {
-    int gamePlace;
-    
-    cout << "Please enter an integer between 1 and " << self.games.count << ":\n";
-    cin >> gamePlace;
-    
-    // Seems like validation logic should be in presenter?
-    [self.presenter userDidSelectGameAtIndex:gamePlace - 1];
 }
 
 @end

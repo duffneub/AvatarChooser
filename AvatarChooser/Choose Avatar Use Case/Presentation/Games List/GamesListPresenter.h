@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class GamesListPresenter;
 @class ChooseGameService;
 @class Game;
 
@@ -17,14 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)showAvatarsForGame:(Game *)game;
 @end
 
-@interface GameViewModel : NSObject
-@property (readonly, strong, nonatomic) Game *base; // temporarily expose this
-@property (readonly, copy, nonatomic) NSString *gameDescription;
-@end
-
 @protocol GamesListView <NSObject>
-- (void)setGamesList:(NSArray<GameViewModel *> *)games;
-@optional
+@property (strong) GamesListPresenter *presenter;
 - (void)reloadGamesList;
 
 @end
@@ -32,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface GamesListPresenter : NSObject
 - (instancetype)initWithService:(ChooseGameService *)service router:(id<GamesListRouter>)router;
 
-- (void)presentView:(id<GamesListView>)view;
+- (void)attachView:(id<GamesListView>)view;
 - (void)userDidSelectGameAtIndex:(NSUInteger)index;
 
 - (NSUInteger)numberOfGames;

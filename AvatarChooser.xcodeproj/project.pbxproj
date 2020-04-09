@@ -10,54 +10,63 @@
 		1733FDF9243D621B0052B800 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FDF8243D621B0052B800 /* AppDelegate.m */; };
 		1733FDFB243D621D0052B800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1733FDFA243D621D0052B800 /* Assets.xcassets */; };
 		1733FDFE243D621D0052B800 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FDFC243D621D0052B800 /* MainMenu.xib */; };
-		1733FE01243D621D0052B800 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE00243D621D0052B800 /* main.m */; };
 		1733FE09243D62980052B800 /* GamesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE07243D62980052B800 /* GamesListViewController.m */; };
 		1733FE0A243D62980052B800 /* GamesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FE08243D62980052B800 /* GamesListViewController.xib */; };
 		1733FE0D243D63520052B800 /* ChooseAvatarSceneSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE0C243D63520052B800 /* ChooseAvatarSceneSplitViewController.m */; };
-		1733FE0E243D6D2E0052B800 /* ChooseGameService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* ChooseGameService.m */; };
-		1733FE0F243D6D380052B800 /* GamesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E931243ABAB500CF58D2 /* GamesListPresenter.m */; };
-		1733FE10243D6D3D0052B800 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
-		1733FE11243D6D420052B800 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
-		1733FE12243D6D460052B800 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
 		1733FE16243EC1D30052B800 /* GameDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE14243EC1D30052B800 /* GameDetailsViewController.m */; };
 		1733FE17243EC1D30052B800 /* GameDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FE15243EC1D30052B800 /* GameDetailsViewController.xib */; };
-		1733FE18243EC2650052B800 /* PersistentImageRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */; };
-		1733FE19243EC26A0052B800 /* SuggestAvatarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */; };
-		1733FE1C243EC4500052B800 /* ChooseAvatarSceneBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE1B243EC4500052B800 /* ChooseAvatarSceneBuilder.m */; };
-		1733FE1D243ECA4E0052B800 /* GameDetailsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */; };
 		1733FE21243EDEB70052B800 /* AvatarCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE1F243EDEB70052B800 /* AvatarCollectionViewItem.m */; };
 		1733FE22243EDEB70052B800 /* AvatarCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1733FE20243EDEB70052B800 /* AvatarCollectionViewItem.xib */; };
-		1733FE23243EEA310052B800 /* ChooseAvatarSceneBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE1B243EC4500052B800 /* ChooseAvatarSceneBuilder.m */; };
-		1733FE24243EEEC30052B800 /* ChooseAvatarCLI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E946243AF8F200CF58D2 /* ChooseAvatarCLI.m */; };
-		1733FE25243EEF000052B800 /* GameDetailsCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */; };
-		1733FE26243EEF050052B800 /* GamesListCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* GamesListCLI.mm */; };
-		17389314243CCF4C00AA71CE /* PersistentImageRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */; };
-		17389315243CCF5300AA71CE /* SuggestAvatarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */; };
-		17389316243CCF7500AA71CE /* ChooseAvatarCLI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E946243AF8F200CF58D2 /* ChooseAvatarCLI.m */; };
-		17389317243CD16200AA71CE /* GamesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E931243ABAB500CF58D2 /* GamesListPresenter.m */; };
-		17389318243CD1AD00AA71CE /* GameDetailsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */; };
-		17389319243CD1B200AA71CE /* GameDetailsCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */; };
-		1738931A243CD1BE00AA71CE /* GamesListCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* GamesListCLI.mm */; };
-		1771E91B243A7DFF00CF58D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E91A243A7DFF00CF58D2 /* main.m */; };
+		1733FE30243EF09F0052B800 /* libChooseAvatarUseCase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1733FE2B243EF0730052B800 /* libChooseAvatarUseCase.a */; };
+		1733FE33243EF2BA0052B800 /* Game.h in Headers */ = {isa = PBXBuildFile; fileRef = 1771E924243A828600CF58D2 /* Game.h */; };
+		1733FE34243EF2BD0052B800 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
+		1733FE35243EF3190052B800 /* Avatar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1771E927243A836800CF58D2 /* Avatar.h */; };
+		1733FE36243EF31E0052B800 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
+		1733FE37243EF3240052B800 /* SuggestAvatarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */; };
+		1733FE39243EF3290052B800 /* SuggestAvatarService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1771E93F243AE63B00CF58D2 /* SuggestAvatarService.h */; };
+		1733FE3A243EF32F0052B800 /* ChooseGameService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* ChooseGameService.m */; };
+		1733FE3B243EF3330052B800 /* ChooseGameService.h in Headers */ = {isa = PBXBuildFile; fileRef = 1771E92A243AB1F200CF58D2 /* ChooseGameService.h */; };
+		1733FE3C243EF33A0052B800 /* PersistentImageRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */; };
+		1733FE3D243EF33E0052B800 /* PersistentImageRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 1771E93C243AD83200CF58D2 /* PersistentImageRepository.h */; };
+		1733FE3E243EF3430052B800 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
+		1733FE3F243EF3460052B800 /* RemoteGameRepository.h in Headers */ = {isa = PBXBuildFile; fileRef = 1771E92D243AB4E600CF58D2 /* RemoteGameRepository.h */; };
+		1733FE41243EF3510052B800 /* GameDetailsPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1771E936243AC7AF00CF58D2 /* GameDetailsPresenter.h */; };
+		1733FE43243EF35B0052B800 /* GameDetailsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */; };
+		1733FE45243EF36C0052B800 /* GamesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E931243ABAB500CF58D2 /* GamesListPresenter.m */; };
+		1733FE46243EF3700052B800 /* GamesListPresenter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1771E930243ABAB500CF58D2 /* GamesListPresenter.h */; };
+		1733FE4C243EF4E20052B800 /* ChooseAvatarSceneBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1733FE1A243EC4500052B800 /* ChooseAvatarSceneBuilder.h */; };
+		1733FE4D243EF4E60052B800 /* ChooseAvatarSceneBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE1B243EC4500052B800 /* ChooseAvatarSceneBuilder.m */; };
+		1733FE4E243EF5080052B800 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE00243D621D0052B800 /* main.m */; };
+		1733FE51243EF55F0052B800 /* libChooseAvatarUseCase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1733FE2B243EF0730052B800 /* libChooseAvatarUseCase.a */; };
+		1733FE54243EF6050052B800 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1733FE00243D621D0052B800 /* main.m */; };
+		1733FE55243EF6530052B800 /* ChooseAvatarCLI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E946243AF8F200CF58D2 /* ChooseAvatarCLI.m */; };
+		1733FE56243EF6610052B800 /* GameDetailsCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */; };
+		1733FE57243EF66B0052B800 /* GamesListCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* GamesListCLI.mm */; };
+		1733FE59243EF7280052B800 /* libChooseAvatarUseCase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1733FE2B243EF0730052B800 /* libChooseAvatarUseCase.a */; };
 		1771E923243A814100CF58D2 /* GamesListCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E922243A814100CF58D2 /* GamesListCLI.mm */; };
-		1771E926243A828600CF58D2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
-		1771E929243A836800CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
-		1771E92C243AB1F200CF58D2 /* ChooseGameService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* ChooseGameService.m */; };
-		1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
-		1771E932243ABAB500CF58D2 /* GamesListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E931243ABAB500CF58D2 /* GamesListPresenter.m */; };
 		1771E935243AC77D00CF58D2 /* GameDetailsCLI.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */; };
-		1771E938243AC7AF00CF58D2 /* GameDetailsPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */; };
-		1771E93E243AD83200CF58D2 /* PersistentImageRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E93D243AD83200CF58D2 /* PersistentImageRepository.m */; };
-		1771E941243AE63B00CF58D2 /* SuggestAvatarService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E940243AE63B00CF58D2 /* SuggestAvatarService.m */; };
 		1771E947243AF8F200CF58D2 /* ChooseAvatarCLI.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E946243AF8F200CF58D2 /* ChooseAvatarCLI.m */; };
 		1771E95C243B039F00CF58D2 /* GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E95B243B039F00CF58D2 /* GameTests.m */; };
-		1771E95D243B04BD00CF58D2 /* Avatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E928243A836800CF58D2 /* Avatar.m */; };
-		1771E95E243B04C200CF58D2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E925243A828600CF58D2 /* Game.m */; };
 		1771E960243B094A00CF58D2 /* ChooseAvatarUseCaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E95F243B094A00CF58D2 /* ChooseAvatarUseCaseTests.m */; };
 		1771E962243B0A2E00CF58D2 /* avatars.json in Resources */ = {isa = PBXBuildFile; fileRef = 1771E961243B0A2E00CF58D2 /* avatars.json */; };
-		1771E963243B0D5600CF58D2 /* ChooseGameService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92B243AB1F200CF58D2 /* ChooseGameService.m */; };
-		1771E964243B0D5A00CF58D2 /* RemoteGameRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 1771E92E243AB4E600CF58D2 /* RemoteGameRepository.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1733FE31243EF0E40052B800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1771E90F243A7DFF00CF58D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1733FE2A243EF0730052B800;
+			remoteInfo = ChooseAvatarUseCase;
+		};
+		1733FE52243EF55F0052B800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1771E90F243A7DFF00CF58D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1733FE2A243EF0730052B800;
+			remoteInfo = ChooseAvatarUseCase;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1771E915243A7DFF00CF58D2 /* CopyFiles */ = {
@@ -93,8 +102,8 @@
 		1733FE1E243EDEB70052B800 /* AvatarCollectionViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AvatarCollectionViewItem.h; sourceTree = "<group>"; };
 		1733FE1F243EDEB70052B800 /* AvatarCollectionViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AvatarCollectionViewItem.m; sourceTree = "<group>"; };
 		1733FE20243EDEB70052B800 /* AvatarCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarCollectionViewItem.xib; sourceTree = "<group>"; };
+		1733FE2B243EF0730052B800 /* libChooseAvatarUseCase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libChooseAvatarUseCase.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1771E917243A7DFF00CF58D2 /* avatar-chooser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "avatar-chooser"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1771E91A243A7DFF00CF58D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1771E921243A814100CF58D2 /* GamesListCLI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamesListCLI.h; sourceTree = "<group>"; };
 		1771E922243A814100CF58D2 /* GamesListCLI.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GamesListCLI.mm; sourceTree = "<group>"; };
 		1771E924243A828600CF58D2 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
@@ -129,6 +138,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1733FE51243EF55F0052B800 /* libChooseAvatarUseCase.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1733FE29243EF0730052B800 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1733FE30243EF09F0052B800 /* libChooseAvatarUseCase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,46 +161,108 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1733FE59243EF7280052B800 /* libChooseAvatarUseCase.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1733FDF6243D621B0052B800 /* AvatarChooser */ = {
+		1733FE47243EF38B0052B800 /* ChooseAvatarUseCase */ = {
+			isa = PBXGroup;
+			children = (
+				1733FE1A243EC4500052B800 /* ChooseAvatarSceneBuilder.h */,
+				1733FE1B243EC4500052B800 /* ChooseAvatarSceneBuilder.m */,
+				1733FE48243EF3A30052B800 /* Presentation */,
+				1771E949243AFCA800CF58D2 /* Data Layer */,
+				1771E94A243AFCB600CF58D2 /* Application */,
+				1771E94B243AFCC700CF58D2 /* Enterprise */,
+			);
+			path = ChooseAvatarUseCase;
+			sourceTree = "<group>";
+		};
+		1733FE48243EF3A30052B800 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1733FE49243EF3AA0052B800 /* Games List */,
+				1733FE4A243EF3B30052B800 /* Game Details */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		1733FE49243EF3AA0052B800 /* Games List */ = {
+			isa = PBXGroup;
+			children = (
+				1771E930243ABAB500CF58D2 /* GamesListPresenter.h */,
+				1771E931243ABAB500CF58D2 /* GamesListPresenter.m */,
+			);
+			path = "Games List";
+			sourceTree = "<group>";
+		};
+		1733FE4A243EF3B30052B800 /* Game Details */ = {
+			isa = PBXGroup;
+			children = (
+				1771E936243AC7AF00CF58D2 /* GameDetailsPresenter.h */,
+				1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */,
+			);
+			path = "Game Details";
+			sourceTree = "<group>";
+		};
+		1733FE4B243EF4A80052B800 /* AppKit GUI */ = {
 			isa = PBXGroup;
 			children = (
 				1733FDF7243D621B0052B800 /* AppDelegate.h */,
 				1733FDF8243D621B0052B800 /* AppDelegate.m */,
-				1733FE1A243EC4500052B800 /* ChooseAvatarSceneBuilder.h */,
-				1733FE1B243EC4500052B800 /* ChooseAvatarSceneBuilder.m */,
 				1733FE0B243D63520052B800 /* ChooseAvatarSceneSplitViewController.h */,
 				1733FE0C243D63520052B800 /* ChooseAvatarSceneSplitViewController.m */,
+				1733FDFA243D621D0052B800 /* Assets.xcassets */,
+				1733FDFC243D621D0052B800 /* MainMenu.xib */,
+				1733FDFF243D621D0052B800 /* Info.plist */,
+				1733FE02243D621D0052B800 /* AvatarChooser.entitlements */,
+				1733FE4F243EF5140052B800 /* Games List */,
+				1733FE50243EF5200052B800 /* Game Details */,
+			);
+			path = "AppKit GUI";
+			sourceTree = "<group>";
+		};
+		1733FE4F243EF5140052B800 /* Games List */ = {
+			isa = PBXGroup;
+			children = (
 				1733FE06243D62980052B800 /* GamesListViewController.h */,
 				1733FE07243D62980052B800 /* GamesListViewController.m */,
 				1733FE08243D62980052B800 /* GamesListViewController.xib */,
+			);
+			path = "Games List";
+			sourceTree = "<group>";
+		};
+		1733FE50243EF5200052B800 /* Game Details */ = {
+			isa = PBXGroup;
+			children = (
 				1733FE13243EC1D30052B800 /* GameDetailsViewController.h */,
 				1733FE14243EC1D30052B800 /* GameDetailsViewController.m */,
 				1733FE15243EC1D30052B800 /* GameDetailsViewController.xib */,
 				1733FE1E243EDEB70052B800 /* AvatarCollectionViewItem.h */,
 				1733FE1F243EDEB70052B800 /* AvatarCollectionViewItem.m */,
 				1733FE20243EDEB70052B800 /* AvatarCollectionViewItem.xib */,
-				1733FDFA243D621D0052B800 /* Assets.xcassets */,
-				1733FDFC243D621D0052B800 /* MainMenu.xib */,
-				1733FDFF243D621D0052B800 /* Info.plist */,
-				1733FE00243D621D0052B800 /* main.m */,
-				1733FE02243D621D0052B800 /* AvatarChooser.entitlements */,
 			);
-			path = AvatarChooser;
+			path = "Game Details";
+			sourceTree = "<group>";
+		};
+		1733FE58243EF7280052B800 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1771E90E243A7DFF00CF58D2 = {
 			isa = PBXGroup;
 			children = (
+				1733FE47243EF38B0052B800 /* ChooseAvatarUseCase */,
 				1771E919243A7DFF00CF58D2 /* AvatarChooser */,
 				1771E954243B038400CF58D2 /* AvatarChooserTests */,
-				1733FDF6243D621B0052B800 /* AvatarChooser */,
 				1771E918243A7DFF00CF58D2 /* Products */,
+				1733FE58243EF7280052B800 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,6 +272,7 @@
 				1771E917243A7DFF00CF58D2 /* avatar-chooser */,
 				1771E953243B038400CF58D2 /* AvatarChooserTests.xctest */,
 				1733FDF5243D621B0052B800 /* AvatarChooser.app */,
+				1733FE2B243EF0730052B800 /* libChooseAvatarUseCase.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,23 +280,22 @@
 		1771E919243A7DFF00CF58D2 /* AvatarChooser */ = {
 			isa = PBXGroup;
 			children = (
-				1771E91A243A7DFF00CF58D2 /* main.m */,
-				1771E948243AFC9D00CF58D2 /* Choose Avatar Use Case */,
+				1733FE00243D621D0052B800 /* main.m */,
+				1771E948243AFC9D00CF58D2 /* Command Line */,
+				1733FE4B243EF4A80052B800 /* AppKit GUI */,
 			);
 			path = AvatarChooser;
 			sourceTree = "<group>";
 		};
-		1771E948243AFC9D00CF58D2 /* Choose Avatar Use Case */ = {
+		1771E948243AFC9D00CF58D2 /* Command Line */ = {
 			isa = PBXGroup;
 			children = (
 				1771E945243AF8F200CF58D2 /* ChooseAvatarCLI.h */,
 				1771E946243AF8F200CF58D2 /* ChooseAvatarCLI.m */,
-				1771E94C243AFCF000CF58D2 /* Presentation */,
-				1771E949243AFCA800CF58D2 /* Data Layer */,
-				1771E94A243AFCB600CF58D2 /* Application */,
-				1771E94B243AFCC700CF58D2 /* Enterprise */,
+				1771E94D243AFCF800CF58D2 /* Games List */,
+				1771E94E243AFD0600CF58D2 /* Game Details */,
 			);
-			path = "Choose Avatar Use Case";
+			path = "Command Line";
 			sourceTree = "<group>";
 		};
 		1771E949243AFCA800CF58D2 /* Data Layer */ = {
@@ -251,22 +331,11 @@
 			path = Enterprise;
 			sourceTree = "<group>";
 		};
-		1771E94C243AFCF000CF58D2 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				1771E94D243AFCF800CF58D2 /* Games List */,
-				1771E94E243AFD0600CF58D2 /* Game Details */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
 		1771E94D243AFCF800CF58D2 /* Games List */ = {
 			isa = PBXGroup;
 			children = (
 				1771E921243A814100CF58D2 /* GamesListCLI.h */,
 				1771E922243A814100CF58D2 /* GamesListCLI.mm */,
-				1771E930243ABAB500CF58D2 /* GamesListPresenter.h */,
-				1771E931243ABAB500CF58D2 /* GamesListPresenter.m */,
 			);
 			path = "Games List";
 			sourceTree = "<group>";
@@ -276,8 +345,6 @@
 			children = (
 				1771E933243AC77D00CF58D2 /* GameDetailsCLI.h */,
 				1771E934243AC77D00CF58D2 /* GameDetailsCLI.mm */,
-				1771E936243AC7AF00CF58D2 /* GameDetailsPresenter.h */,
-				1771E937243AC7AF00CF58D2 /* GameDetailsPresenter.m */,
 			);
 			path = "Game Details";
 			sourceTree = "<group>";
@@ -295,6 +362,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1733FE27243EF0730052B800 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1733FE41243EF3510052B800 /* GameDetailsPresenter.h in Headers */,
+				1733FE33243EF2BA0052B800 /* Game.h in Headers */,
+				1733FE3B243EF3330052B800 /* ChooseGameService.h in Headers */,
+				1733FE46243EF3700052B800 /* GamesListPresenter.h in Headers */,
+				1733FE4C243EF4E20052B800 /* ChooseAvatarSceneBuilder.h in Headers */,
+				1733FE3F243EF3460052B800 /* RemoteGameRepository.h in Headers */,
+				1733FE35243EF3190052B800 /* Avatar.h in Headers */,
+				1733FE3D243EF33E0052B800 /* PersistentImageRepository.h in Headers */,
+				1733FE39243EF3290052B800 /* SuggestAvatarService.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1733FDF4243D621B0052B800 /* AvatarChooser */ = {
 			isa = PBXNativeTarget;
@@ -307,11 +393,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				1733FE53243EF55F0052B800 /* PBXTargetDependency */,
 			);
 			name = AvatarChooser;
 			productName = AvatarChooser;
 			productReference = 1733FDF5243D621B0052B800 /* AvatarChooser.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1733FE2A243EF0730052B800 /* ChooseAvatarUseCase */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1733FE2C243EF0730052B800 /* Build configuration list for PBXNativeTarget "ChooseAvatarUseCase" */;
+			buildPhases = (
+				1733FE27243EF0730052B800 /* Headers */,
+				1733FE28243EF0730052B800 /* Sources */,
+				1733FE29243EF0730052B800 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ChooseAvatarUseCase;
+			productName = ChooseAvatarUseCase;
+			productReference = 1733FE2B243EF0730052B800 /* libChooseAvatarUseCase.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		1771E916243A7DFF00CF58D2 /* avatar-chooser */ = {
 			isa = PBXNativeTarget;
@@ -324,6 +428,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1733FE32243EF0E40052B800 /* PBXTargetDependency */,
 			);
 			name = "avatar-chooser";
 			productName = AvatarChooser;
@@ -359,6 +464,9 @@
 					1733FDF4243D621B0052B800 = {
 						CreatedOnToolsVersion = 11.4;
 					};
+					1733FE2A243EF0730052B800 = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					1771E916243A7DFF00CF58D2 = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -383,6 +491,7 @@
 				1733FDF4243D621B0052B800 /* AvatarChooser */,
 				1771E916243A7DFF00CF58D2 /* avatar-chooser */,
 				1771E952243B038400CF58D2 /* AvatarChooserTests */,
+				1733FE2A243EF0730052B800 /* ChooseAvatarUseCase */,
 			);
 		};
 /* End PBXProject section */
@@ -415,24 +524,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1733FE12243D6D460052B800 /* Game.m in Sources */,
-				1733FE1D243ECA4E0052B800 /* GameDetailsPresenter.m in Sources */,
 				1733FE21243EDEB70052B800 /* AvatarCollectionViewItem.m in Sources */,
+				1733FE56243EF6610052B800 /* GameDetailsCLI.mm in Sources */,
 				1733FE16243EC1D30052B800 /* GameDetailsViewController.m in Sources */,
-				1733FE24243EEEC30052B800 /* ChooseAvatarCLI.m in Sources */,
-				1733FE0F243D6D380052B800 /* GamesListPresenter.m in Sources */,
-				1733FE19243EC26A0052B800 /* SuggestAvatarService.m in Sources */,
-				1733FE01243D621D0052B800 /* main.m in Sources */,
-				1733FE11243D6D420052B800 /* Avatar.m in Sources */,
 				1733FE0D243D63520052B800 /* ChooseAvatarSceneSplitViewController.m in Sources */,
+				1733FE55243EF6530052B800 /* ChooseAvatarCLI.m in Sources */,
+				1733FE57243EF66B0052B800 /* GamesListCLI.mm in Sources */,
 				1733FDF9243D621B0052B800 /* AppDelegate.m in Sources */,
-				1733FE25243EEF000052B800 /* GameDetailsCLI.mm in Sources */,
-				1733FE10243D6D3D0052B800 /* RemoteGameRepository.m in Sources */,
+				1733FE54243EF6050052B800 /* main.m in Sources */,
 				1733FE09243D62980052B800 /* GamesListViewController.m in Sources */,
-				1733FE26243EEF050052B800 /* GamesListCLI.mm in Sources */,
-				1733FE0E243D6D2E0052B800 /* ChooseGameService.m in Sources */,
-				1733FE1C243EC4500052B800 /* ChooseAvatarSceneBuilder.m in Sources */,
-				1733FE18243EC2650052B800 /* PersistentImageRepository.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1733FE28243EF0730052B800 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1733FE45243EF36C0052B800 /* GamesListPresenter.m in Sources */,
+				1733FE37243EF3240052B800 /* SuggestAvatarService.m in Sources */,
+				1733FE4D243EF4E60052B800 /* ChooseAvatarSceneBuilder.m in Sources */,
+				1733FE43243EF35B0052B800 /* GameDetailsPresenter.m in Sources */,
+				1733FE36243EF31E0052B800 /* Avatar.m in Sources */,
+				1733FE3A243EF32F0052B800 /* ChooseGameService.m in Sources */,
+				1733FE3E243EF3430052B800 /* RemoteGameRepository.m in Sources */,
+				1733FE3C243EF33A0052B800 /* PersistentImageRepository.m in Sources */,
+				1733FE34243EF2BD0052B800 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,19 +556,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1771E926243A828600CF58D2 /* Game.m in Sources */,
-				1771E92C243AB1F200CF58D2 /* ChooseGameService.m in Sources */,
+				1733FE4E243EF5080052B800 /* main.m in Sources */,
 				1771E947243AF8F200CF58D2 /* ChooseAvatarCLI.m in Sources */,
 				1771E923243A814100CF58D2 /* GamesListCLI.mm in Sources */,
 				1771E935243AC77D00CF58D2 /* GameDetailsCLI.mm in Sources */,
-				1771E938243AC7AF00CF58D2 /* GameDetailsPresenter.m in Sources */,
-				1771E932243ABAB500CF58D2 /* GamesListPresenter.m in Sources */,
-				1771E941243AE63B00CF58D2 /* SuggestAvatarService.m in Sources */,
-				1771E92F243AB4E600CF58D2 /* RemoteGameRepository.m in Sources */,
-				1771E929243A836800CF58D2 /* Avatar.m in Sources */,
-				1771E93E243AD83200CF58D2 /* PersistentImageRepository.m in Sources */,
-				1733FE23243EEA310052B800 /* ChooseAvatarSceneBuilder.m in Sources */,
-				1771E91B243A7DFF00CF58D2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,23 +567,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17389315243CCF5300AA71CE /* SuggestAvatarService.m in Sources */,
-				17389318243CD1AD00AA71CE /* GameDetailsPresenter.m in Sources */,
-				1738931A243CD1BE00AA71CE /* GamesListCLI.mm in Sources */,
-				1771E95E243B04C200CF58D2 /* Game.m in Sources */,
-				17389319243CD1B200AA71CE /* GameDetailsCLI.mm in Sources */,
-				17389317243CD16200AA71CE /* GamesListPresenter.m in Sources */,
-				17389316243CCF7500AA71CE /* ChooseAvatarCLI.m in Sources */,
 				1771E960243B094A00CF58D2 /* ChooseAvatarUseCaseTests.m in Sources */,
-				17389314243CCF4C00AA71CE /* PersistentImageRepository.m in Sources */,
-				1771E95D243B04BD00CF58D2 /* Avatar.m in Sources */,
-				1771E964243B0D5A00CF58D2 /* RemoteGameRepository.m in Sources */,
 				1771E95C243B039F00CF58D2 /* GameTests.m in Sources */,
-				1771E963243B0D5600CF58D2 /* ChooseGameService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1733FE32243EF0E40052B800 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1733FE2A243EF0730052B800 /* ChooseAvatarUseCase */;
+			targetProxy = 1733FE31243EF0E40052B800 /* PBXContainerItemProxy */;
+		};
+		1733FE53243EF55F0052B800 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1733FE2A243EF0730052B800 /* ChooseAvatarUseCase */;
+			targetProxy = 1733FE52243EF55F0052B800 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1733FDFC243D621D0052B800 /* MainMenu.xib */ = {
@@ -494,15 +603,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AvatarChooser/AvatarChooser.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "AvatarChooser/AppKit GUI/AvatarChooser.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = AvatarChooser/Info.plist;
+				INFOPLIST_FILE = "AvatarChooser/AppKit GUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.duffneubauer.AvatarChooser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -512,17 +621,39 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = AvatarChooser/AvatarChooser.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "AvatarChooser/AppKit GUI/AvatarChooser.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = AvatarChooser/Info.plist;
+				INFOPLIST_FILE = "AvatarChooser/AppKit GUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = com.duffneubauer.AvatarChooser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1733FE2D243EF0730052B800 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1733FE2E243EF0730052B800 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -639,6 +770,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = $SOURCE_ROOT/include;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -647,6 +780,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = $SOURCE_ROOT/include;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -693,6 +828,15 @@
 			buildConfigurations = (
 				1733FE03243D621D0052B800 /* Debug */,
 				1733FE04243D621D0052B800 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1733FE2C243EF0730052B800 /* Build configuration list for PBXNativeTarget "ChooseAvatarUseCase" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1733FE2D243EF0730052B800 /* Debug */,
+				1733FE2E243EF0730052B800 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

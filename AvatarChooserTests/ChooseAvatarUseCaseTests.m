@@ -9,8 +9,8 @@
 #import <XCTest/XCTest.h>
 
 #import "Avatar.h"
+#import "ChooseAvatarSceneBuilder.h"
 #import "ChooseGameService.h"
-#import "CLIChooseAvatarUseCase.h"
 #import "Game.h"
 #import "GamesListPresenter.h"
 #import "PersistentImageRepository.h"
@@ -45,18 +45,20 @@
     NSURL *baseURL = [NSURL fileURLWithPath:@"/the/cloud/"];
     NSArray *json = [self allGamesJSON];
     MockNetworkClient *client = [[MockNetworkClient alloc] initWithJSON:json];
-    RemoteGameRepository *repo = [[RemoteGameRepository alloc] initWithBaseURL:baseURL networkClient:client];
-    ChooseGameService *service = [[ChooseGameService alloc] initWithGameRepository:repo];
+    RemoteGameRepository *gameRepo = [[RemoteGameRepository alloc] initWithBaseURL:baseURL networkClient:client];
+    PersistentImageRepository *imageRepo = [[PersistentImageRepository alloc] initWithDownloadLocation:[NSURL fileURLWithPath:@"/path/to/nowhere"]];
+    ChooseAvatarSceneBuilder *builder = [[ChooseAvatarSceneBuilder alloc] initWithGameRepository:gameRepo imageRepository:imageRepo];
+
     MockGamesListRouter *router = [[MockGamesListRouter alloc] init];
-    GamesListPresenter *presenter = [[GamesListPresenter alloc] initWithService:service router:router];
     NSURL *expectedURL = [baseURL URLByAppendingPathComponent:@"avatars.json"];
     MockGamesListView *view = [[MockGamesListView alloc] init];
+    [builder buildGamesListSceneWithView:view router:router];
     
     // Verify scene state before testing
     XCTAssertFalse(view.shouldReloadGamesList);
     
     // View is displayed to user
-    [presenter presentView:view];
+    [view.presenter attachView:view];
     
     // System should fetch games from the network
     XCTAssertEqualObjects(expectedURL, client.url);
@@ -64,16 +66,19 @@
 
     XCTAssertLessThan(0, json.count); // Sanity check to make sure enumeration block asserts are called
 
-    // System should present games list to user
-    XCTAssertEqual(json.count, presenter.numberOfGames);
-    [json enumerateObjectsUsingBlock:^(NSDictionary<NSString *, id> *gameJSON, NSUInteger idx, BOOL * _Nonnull stop) {
+    // System should present games list to user in alphabetical order
+    XCTAssertEqual(json.count, view.presenter.numberOfGames);
+    NSArray *sortedGamesJSON = [json sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *lhs, NSDictionary *rhs) {
+        return [(NSString *)lhs[@"name"] compare:(NSString *)rhs[@"name"]];
+    }];
+    [sortedGamesJSON enumerateObjectsUsingBlock:^(NSDictionary<NSString *, id> *gameJSON, NSUInteger idx, BOOL * _Nonnull stop) {
         
         // System should display name and # of avatars
-        XCTAssertEqualObjects(gameJSON[@"name"], [presenter nameOfGameAtIndex:idx]);
-        XCTAssertEqual(((NSArray *)gameJSON[@"avatars"]).count, [presenter numberOfAvatarsForGameAtIndex:idx]);
+        XCTAssertEqualObjects(gameJSON[@"name"], [view.presenter nameOfGameAtIndex:idx]);
+        XCTAssertEqual(((NSArray *)gameJSON[@"avatars"]).count, [view.presenter numberOfAvatarsForGameAtIndex:idx]);
         
         // User can choose a game from the list
-        [presenter userDidSelectGameAtIndex:idx];
+        [view.presenter userDidSelectGameAtIndex:idx];
         XCTAssertEqualObjects(gameJSON[@"name"], [router chosenGame].name);
         XCTAssertEqual(((NSArray *)gameJSON[@"avatars"]).count, [router chosenGame].numberOfAvatars);
     }];
@@ -189,6 +194,7 @@
 @end
 
 @implementation MockGamesListView
+@synthesize presenter;
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -197,8 +203,6 @@
     
     return self;
 }
-
-- (void)setGamesList:(NSArray<GameViewModel *> *)games {}
 
 - (void)reloadGamesList {
     self.shouldReloadGamesList = YES;

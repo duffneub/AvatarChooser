@@ -8,18 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@class Game;
+@protocol GameRepository;
+@protocol ImageRepository;
 
 @protocol GamesListView;
 @protocol GamesListRouter;
 
+@class Game;
 @protocol GameDetailsView;
 @protocol GameDetailsRouter;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChooseAvatarSceneBuilder : NSObject
-- (instancetype)initWithDownloadLocation:(NSURL *)location;
+- (instancetype)initWithGameRepository:(id<GameRepository>)gameRepo imageRepository:(id<ImageRepository>)imageRepo;
 - (void)buildGamesListSceneWithView:(id<GamesListView>)view router:(id<GamesListRouter>)router;
 - (void)buildGameDetailsSceneWithGame:(Game *)game view:(id<GameDetailsView>)view router:(id<GameDetailsRouter>)router;
 @end

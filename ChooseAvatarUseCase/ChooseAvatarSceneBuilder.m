@@ -25,12 +25,8 @@
 
 @implementation ChooseAvatarSceneBuilder
 
-- (instancetype)initWithDownloadLocation:(NSURL *)location {
+- (instancetype)initWithGameRepository:(id<GameRepository>)gameRepo imageRepository:(id<ImageRepository>)imageRepo {
     if (self = [super init]) {
-        NSURL *databaseURL = [NSURL URLWithString:@"https://clientupdate-v6.cursecdn.com/Avatars/"];
-        RemoteGameRepository *gameRepo = [[RemoteGameRepository alloc] initWithBaseURL:databaseURL
-                                                                         networkClient:[NSURLSession sharedSession]];
-        PersistentImageRepository *imageRepo = [[PersistentImageRepository alloc] initWithDownloadLocation:location];
         self.chooseGameService = [[ChooseGameService alloc] initWithGameRepository:gameRepo];
         self.suggestAvatarService = [[SuggestAvatarService alloc] initWithImageRepository:imageRepo];
     }

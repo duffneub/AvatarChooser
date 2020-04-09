@@ -28,19 +28,28 @@ void cleanDirectory(NSURL *directory) {
     }
 }
 
+ChooseAvatarSceneBuilder * makeBuildAvatarSceneBuilder(NSURL *directory) {
+    NSURL *databaseURL = [NSURL URLWithString:@"https://clientupdate-v6.cursecdn.com/Avatars/"];
+    RemoteGameRepository *gameRepo = [[RemoteGameRepository alloc] initWithBaseURL:databaseURL
+                                                                     networkClient:[NSURLSession sharedSession]];
+    PersistentImageRepository *imageRepo = [[PersistentImageRepository alloc] initWithDownloadLocation:directory];
+    ChooseAvatarSceneBuilder *builder = [[ChooseAvatarSceneBuilder alloc] initWithGameRepository:gameRepo imageRepository:imageRepo];
+    
+    return builder;
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSURL *executableLocation = [NSURL fileURLWithPath:[NSString stringWithUTF8String:argv[0]]];
         NSString *executable = [executableLocation lastPathComponent];
-        
+
         if ([executable isEqualToString:@"avatar-chooser"]) {
             NSURL *directory = [NSURL fileURLWithPath:[NSString stringWithUTF8String:argv[1]]];
             
             /* FOR TESTING PURPOSES, REMOVE FOR PROD */
             cleanDirectory(directory);
-            
-            ChooseAvatarSceneBuilder *builder = [[ChooseAvatarSceneBuilder alloc] initWithDownloadLocation:directory];
-            ChooseAvatarCLI *cli = [[ChooseAvatarCLI alloc] initWithBuilder:builder];
+
+            ChooseAvatarCLI *cli = [[ChooseAvatarCLI alloc] initWithBuilder:makeBuildAvatarSceneBuilder(directory)];
             [cli run];
             [NSRunLoop.mainRunLoop run];
         } else {
@@ -52,7 +61,7 @@ int main(int argc, const char * argv[]) {
             
             [NSApplication sharedApplication];
             [[NSBundle mainBundle] loadNibNamed:@"MainMenu" owner:NSApp topLevelObjects:nil];
-            ((AppDelegate *)[NSApp delegate]).chooseAvatarSceneBuilder = [[ChooseAvatarSceneBuilder alloc] initWithDownloadLocation:downloadsDir];
+            ((AppDelegate *)[NSApp delegate]).chooseAvatarSceneBuilder = makeBuildAvatarSceneBuilder(downloadsDir);
             [NSApp run];
         }
     }

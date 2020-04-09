@@ -19,8 +19,8 @@
 #import "PersistentImageRepository.h"
 
 @interface ChooseAvatarSceneBuilder ()
-@property (strong) ChooseGameService *chooseGameService;
-@property (strong) SuggestAvatarService *suggestAvatarService;
+@property (strong, nonatomic) ChooseGameService *chooseGameService;
+@property (strong, nonatomic) SuggestAvatarService *suggestAvatarService;
 @end
 
 @implementation ChooseAvatarSceneBuilder

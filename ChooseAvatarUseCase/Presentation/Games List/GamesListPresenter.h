@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @protocol GamesListView <NSObject>
-@property (strong) GamesListPresenter *presenter;
+@property (strong, nonatomic) GamesListPresenter *presenter;
 - (void)reloadGamesList;
 
 @end

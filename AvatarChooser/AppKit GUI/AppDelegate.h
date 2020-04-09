@@ -11,6 +11,6 @@
 @class ChooseAvatarSceneBuilder;
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
-@property (strong, nullable) ChooseAvatarSceneBuilder *chooseAvatarSceneBuilder;
+@property (strong, nonatomic, nullable) ChooseAvatarSceneBuilder *chooseAvatarSceneBuilder;
 @end
 

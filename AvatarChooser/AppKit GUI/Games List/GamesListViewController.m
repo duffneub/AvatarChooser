@@ -9,8 +9,8 @@
 #import "GamesListViewController.h"
 
 @interface GamesListViewController () <NSOutlineViewDataSource, NSOutlineViewDelegate>
-@property (strong) IBOutlet NSOutlineView *outlineView;
-@property (strong) NSString *headerItem;
+@property (strong, nonatomic) IBOutlet NSOutlineView *outlineView;
+@property (copy, nonatomic) NSString *headerItem;
 @end
 
 @implementation GamesListViewController

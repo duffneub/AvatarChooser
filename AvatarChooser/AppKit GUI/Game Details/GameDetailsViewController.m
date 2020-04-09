@@ -9,7 +9,7 @@
 #import "GameDetailsViewController.h"
 
 @interface GameDetailsViewController () <NSCollectionViewDataSource>
-@property (strong) IBOutlet NSCollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet NSCollectionView *collectionView;
 @end
 
 @implementation GameDetailsViewController

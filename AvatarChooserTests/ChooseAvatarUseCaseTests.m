@@ -147,7 +147,7 @@
 #pragma mark - MockNetworkTask
 
 @interface MockNetworkTask ()
-@property (copy, nonatomic) void (^onResumeHandler)(void);
+@property (copy, nonatomic, nonatomic) void (^onResumeHandler)(void);
 @end
 
 @implementation MockNetworkTask

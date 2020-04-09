@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @protocol GameDetailsView <NSObject>
-@property (strong) GameDetailsPresenter *presenter;
+@property (strong, nonatomic) GameDetailsPresenter *presenter;
 - (void)reloadAvatarSuggestions;
 
 @end

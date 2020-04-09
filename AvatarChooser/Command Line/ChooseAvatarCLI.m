@@ -9,19 +9,12 @@
 #import "ChooseAvatarCLI.h"
 
 #import "ChooseAvatarSceneBuilder.h"
-#import "ChooseGameService.h"
 #import "GamesListCLI.h"
 #import "GameDetailsCLI.h"
-#import "GameDetailsPresenter.h"
-#import "GamesListPresenter.h"
-#import "SuggestAvatarService.h"
 
 @interface ChooseAvatarCLI () <GamesListRouter, GameDetailsRouter>
-@property (strong, nullable) ChooseAvatarSceneBuilder *builder;
-//@property (strong, nonatomic) ChooseGameService *chooseGameService;
-//@property (strong, nonatomic) SuggestAvatarService *suggestAvatarService;
-//@property (copy, nonatomic) void (^completionHandler)(void);
-@property (strong, nonatomic) GamesListCLI *gamesListCLI;
+@property (strong, nonatomic, nullable) ChooseAvatarSceneBuilder *builder;
+@property (strong, nonatomic, nonatomic) GamesListCLI *gamesListCLI;
 @end
 
 @implementation ChooseAvatarCLI

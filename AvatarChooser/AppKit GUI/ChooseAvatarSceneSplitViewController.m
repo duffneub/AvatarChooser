@@ -11,11 +11,8 @@
 #import "GamesListViewController.h"
 #import "GameDetailsViewController.h"
 
-#import "GamesListPresenter.h"
-#import "GameDetailsPresenter.h"
-
 @interface ChooseAvatarSceneSplitViewController ()  <GamesListRouter, GameDetailsRouter>
-@property (strong, nullable) ChooseAvatarSceneBuilder *builder;
+@property (strong, nonatomic, nullable) ChooseAvatarSceneBuilder *builder;
 @end
 
 @implementation ChooseAvatarSceneSplitViewController
